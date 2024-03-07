@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,34 @@ public class PlayerController : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
-        Debug.Log(moveInput);
+        
+        moveInput.Normalize();
 
         transform.position += moveInput * moveSpeed * Time.deltaTime;
+
+        Debug.Log(moveInput.x);
+
+        if (moveInput.x >= 0f)
+        {
+            
+        }
+
+        if (moveInput != Vector3.zero)
+        {
+            anim.SetBool("IsMoving", true);
+
+            if (moveInput.x > 0)
+            {
+                transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            }
+            if (moveInput.x < 0)
+            {
+                transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+            }
+        }
+        else
+        {
+            anim.SetBool("IsMoving", false);
+        }
     }
 }
