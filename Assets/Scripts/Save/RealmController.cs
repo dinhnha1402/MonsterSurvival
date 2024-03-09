@@ -9,6 +9,9 @@ using Realms.Sync.ErrorHandling;
 using Realms.Sync.Exceptions;
 using System.Linq;
 using System;
+using Assets.Scripts.Save;
+using System.Security.Cryptography;
+using System.Text;
 
 public class RealmController
 {
@@ -84,6 +87,79 @@ public class RealmController
                 }
             }
         });
+    }
+
+    private string HashPassword(string password)
+    {
+        // Sử dụng SHA256 hoặc một phương pháp mã hóa mạnh mẽ hơn
+        using (var sha256 = SHA256.Create())
+        {
+            var bytes = Encoding.UTF8.GetBytes(password);
+            var hash = sha256.ComputeHash(bytes);
+            return Convert.ToBase64String(hash);
         }
+    }
+
+    public async Task<bool> IsValidLoginAsync(string username, string password)
+    {
+        if (realm == null)
+        {
+            Debug.Log("Realm not ready");
+            return false;
+        }
+
+        // Mã hóa password trước khi so sánh, giả sử sử dụng phương pháp mã hóa giống khi lưu password
+        var hashedPassword = HashPassword(password); // Bạn cần cung cấp phương thức HashPassword
+
+        try
+        {
+            var userAccount = realm.All<UserAccount>().FirstOrDefault(u => u.Username == username && u.Password == hashedPassword);
+            return userAccount != null;
+        }
+        catch (Exception e)
+        {
+            Debug.Log($"Error during login: {e.Message}");
+            return false;
+        }
+    }
+
+    public async Task<bool> RegisterUserAsync(string username, string password)
+    {
+        if (realm == null)
+        {
+            Debug.Log("Realm not ready");
+            return false;
+        }
+
+        var userExists = realm.All<UserAccount>().Any(u => u.Username == username);
+        if (userExists)
+        {
+            Debug.Log($"User {username} already exists.");
+            return false; // Người dùng đã tồn tại
+        }
+
+        // Mã hóa mật khẩu trước khi lưu
+        var hashedPassword = HashPassword(password);
+
+        try
+        {
+            realm.Write(() =>
+            {
+                var newUser = new UserAccount
+                {
+                    Username = username,
+                    Password = hashedPassword
+                };
+                realm.Add(newUser);
+            });
+            return true; // Tạo mới người dùng thành công
+        }
+        catch (Exception e)
+        {
+            Debug.Log($"Error during user registration: {e.Message}");
+            return false; // Đã xảy ra lỗi khi tạo mới người dùng
+        }
+    }
+
 }
 
