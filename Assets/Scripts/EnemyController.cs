@@ -9,12 +9,14 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed;
     private Transform target;
     public Animator anim;
-
+    public SpriteRenderer spriteRenderer;
     public float damage;
-    // Start is called before the first frame update
+    public float attackRange = 0f;
+    //private float distanceToPlayer = 0f;
+
     void Start()
     {
-        target = FindObjectOfType<PlayerController>().transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -23,36 +25,42 @@ public class EnemyController : MonoBehaviour
         //enemy follow player
         theRb.velocity = (target.position - transform.position).normalized * moveSpeed;
 
+        float distanceToPlayer = Vector2.Distance(transform.position, target.position);
+
         if (theRb.velocity.x > 0)
         {
-            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+            spriteRenderer.flipX = true;
+
         }
         else if (theRb.velocity.x < 0)
         {
-            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            spriteRenderer.flipX = false;
         }
-        
 
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-            {
-                PlayerHealthController.Instance.TakeDamage(damage);
-                anim.SetBool("IsClose", true);
-            }
-        else if (collision.gameObject.tag != "Player")
+        if (distanceToPlayer <= attackRange)
+        {
+            anim.SetBool("IsClose", true);
+        }
+        else
         {
             anim.SetBool("IsClose", false);
         }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        anim.SetBool("IsClose", false);
 
+
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            PlayerHealthController.Instance.TakeDamage(damage);
+            Debug.Log(damage);
+        }
+        
     }
 
 
 }
+
+
+
