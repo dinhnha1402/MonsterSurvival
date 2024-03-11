@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     public Animator anim;
+    public SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +35,11 @@ public class PlayerController : MonoBehaviour
 
             if (moveInput.x > 0)
             {
-                transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+                spriteRenderer.flipX = false;
             }
             if (moveInput.x < 0)
             {
-                transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+                spriteRenderer.flipX = true;
             }
         }
         else
