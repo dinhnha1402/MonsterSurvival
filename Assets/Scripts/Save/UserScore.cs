@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class UserScore : RealmObject
 {
-    [MapTo("id")]
+    [MapTo("_id")]
     [PrimaryKey]
     public  ObjectId? Id { get; set; }
     

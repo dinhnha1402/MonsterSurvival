@@ -13,7 +13,7 @@ using Assets.Scripts.Save;
 using System.Security.Cryptography;
 using System.Text;
 
-public class RealmController
+public class RealmController : MonoBehaviour
 {
     private Realm realm;
     private readonly string myRealmAppId = "application-0-wqtsj";
@@ -26,31 +26,36 @@ public class RealmController
 
     private async void InitAsync()
     {
-        var app = App.Create(myRealmAppId);
+        var app = App.Create(new AppConfiguration(myRealmAppId)
+        {
+            MetadataPersistenceMode = MetadataPersistenceMode.NotEncrypted
+        });
+
         User user = await Get_userAsync(app);
-        PartitionSyncConfiguration config = GetConfig(user);
+        if (user == null) return; // Thêm kiểm tra nếu không thể đăng nhập
+
+        var config = new FlexibleSyncConfiguration(user);
+
         realm = await Realm.GetInstanceAsync(config);
+
+        // Cần cấu hình subscriptions cho Flexible Sync nếu cần
+        // Ví dụ:
+        // realm.Subscriptions.Update(() =>
+        // {
+        //     realm.Subscriptions.Add(realm.All<UserAccount>());
+        // });
+
+        // Lưu ý: Đảm bảo đã đăng ký model trong MongoDB Atlas
     }
 
     private async Task<User> Get_userAsync(App app)
     {
         User user = app.CurrentUser;
-        if (user == null)
+        if (user == null && !string.IsNullOrEmpty(apiKey))
         {
             user = await app.LogInAsync(Credentials.ApiKey(apiKey));
         }
         return user;
-    }
-
-    private PartitionSyncConfiguration GetConfig(User user)
-    {
-        PartitionSyncConfiguration config = new("MonsterSurvival", user);
-
-        config.ClientResetHandler = new DiscardUnsyncedChangesHandler()
-        {
-            ManualResetFallback = (ClientResetException clientResetException) => clientResetException.InitiateClientReset()
-        };
-        return config;
     }
 
     public void AddHighscore(string playerName, int score)
