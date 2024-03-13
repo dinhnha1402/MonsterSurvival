@@ -9,7 +9,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -56,7 +57,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="C:\Tin\Courses\Unity\GitHub\MonsterSurvival\Library\PackageCache\io.realm.unity@11.7.0\Editor\Realm.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.21f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.21f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -69,7 +69,6 @@
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
     <Compile Include="Assets\Scripts\Save\UserAccount.cs" />
     <Compile Include="Assets\Scripts\ChangeInput.cs" />
-    <Compile Include="Assets\Scripts\Save\RealmController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Save\LoginHandler.cs" />
     <Compile Include="Assets\Scripts\Save\Highscore.cs" />
@@ -435,16 +434,8 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.21f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Realm.UnityUtils">
-      <HintPath>Library\PackageCache\io.realm.unity@11.7.0\Runtime\Realm.UnityUtils.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Realm">
-      <HintPath>Library\PackageCache\io.realm.unity@11.7.0\Runtime\Realm.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MongoDB.Driver.Core">
@@ -457,10 +448,6 @@
     </Reference>
     <Reference Include="MongoDB.Driver">
       <HintPath>Assets\Plugins\MongoDB.Driver.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Realm.PlatformHelpers">
-      <HintPath>Library\PackageCache\io.realm.unity@11.7.0\Runtime\Realm.PlatformHelpers.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MongoDB.Libmongocrypt">

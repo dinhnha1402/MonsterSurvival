@@ -1,31 +1,46 @@
-﻿using Realms.Sync;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MongoDB.Driver;
-
+using MongoDB.Bson;
 
 public class MongoDBConnector 
 {
     private MongoDB.Driver.MongoClient client;
     private IMongoDatabase database;
 
-    public MongoDBConnector(string connectionString, string dbName)
+    void Start()
     {
+        ConnectToMongoDB();
+        FetchData();
+    }
+
+    void ConnectToMongoDB()
+    {
+        // Thay thế với connection string thực tế của bạn
+        string connectionString = "mongodb+srv://your_username:your_password@your_cluster.mongodb.net";
+        client = new MongoDB.Driver.MongoClient(connectionString);
+        // Thay thế với tên database thực tế của bạn
+        database = client.GetDatabase("your_database_name");
+    }
+
+    async void FetchData()
+    {
+        // Thay thế với tên collection thực tế của bạn
+        var collection = database.GetCollection<BsonDocument>("your_collection_name");
+
         try
         {
-            // Tạo MongoClient sử dụng connection string
-            client = new MongoDB.Driver.MongoClient(connectionString);
-
-            // Kết nối tới database cụ thể
-            database = client.GetDatabase(dbName);
-
-            Console.WriteLine("Kết nối tới MongoDB thành công.");
+            var documents = await collection.Find(new BsonDocument()).ToListAsync();
+            foreach (var document in documents)
+            {
+                Debug.Log(document.ToString());
+            }
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            Console.WriteLine($"Lỗi kết nối tới MongoDB: {ex.Message}");
+            Debug.LogError($"Error accessing MongoDB: {e.Message}");
         }
     }
 }
