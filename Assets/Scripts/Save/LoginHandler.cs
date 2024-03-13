@@ -7,7 +7,7 @@ public class LoginHandler : MonoBehaviour
 {
     public TMP_Text usernameInputField;
     public TMP_Text passwordInputField;
-    public RealmController realmController; // Giả sử bạn có thể truy cập RealmController từ đây
+    public MongoDBConnector MongoController; // Giả sử bạn có thể truy cập RealmController từ đây
 
     public void OnLoginButtonClicked()
     {

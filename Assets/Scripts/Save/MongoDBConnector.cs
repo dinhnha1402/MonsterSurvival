@@ -5,7 +5,7 @@ using UnityEngine;
 using MongoDB.Driver;
 using MongoDB.Bson;
 
-public class MongoDBConnector 
+public class MongoDBConnector : MonoBehaviour
 {
     private MongoDB.Driver.MongoClient client;
     private IMongoDatabase database;
@@ -19,16 +19,16 @@ public class MongoDBConnector
     void ConnectToMongoDB()
     {
         // Thay thế với connection string thực tế của bạn
-        string connectionString = "mongodb+srv://your_username:your_password@your_cluster.mongodb.net";
+        string connectionString = "mongodb+srv://dbadmin:Pcc-0903907623@cluster01.dx0ubl0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster01";
         client = new MongoDB.Driver.MongoClient(connectionString);
         // Thay thế với tên database thực tế của bạn
-        database = client.GetDatabase("your_database_name");
+        database = client.GetDatabase("MonsterSurvivalDB");
     }
 
     async void FetchData()
     {
         // Thay thế với tên collection thực tế của bạn
-        var collection = database.GetCollection<BsonDocument>("your_collection_name");
+        var collection = database.GetCollection<BsonDocument>("UserAccount");
 
         try
         {
