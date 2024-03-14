@@ -4,16 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using System.Security.Cryptography;
+using System.Text;
+using Amazon.Runtime.Documents;
+using TMPro;
 
 public class MongoDBConnector : MonoBehaviour
 {
     private MongoDB.Driver.MongoClient client;
     private IMongoDatabase database;
 
+    public TMP_Text loginStatusText;
+
     void Start()
     {
         ConnectToMongoDB();
-        FetchData();
+        //FetchData();
     }
 
     void ConnectToMongoDB()
@@ -41,6 +47,48 @@ public class MongoDBConnector : MonoBehaviour
         catch (Exception e)
         {
             Debug.LogError($"Error accessing MongoDB: {e.Message}");
+        }
+    }
+
+    private string HashPassword(string password)
+    {
+        using (SHA256 sha256 = SHA256.Create())
+        {
+            byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                builder.Append(bytes[i].ToString("x2"));
+            }
+            return builder.ToString();
+        }
+    }
+
+    public async void CheckLogin(string username, string password)
+    {
+        var hashedPassword = HashPassword(password);
+        var filter = new BsonDocument {
+            { "username", username },
+            { "password", password }
+        };
+
+        var collection = database.GetCollection<BsonDocument>("UserAccount");
+
+        try
+        {
+            var documents = await collection.Find(filter).ToListAsync();
+            if (documents.Count > 0)
+            {
+                loginStatusText.text = "Login thành công";
+            }
+            else
+            {
+                loginStatusText.text = "Login thất bại";
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error during login check: {e.Message}");
         }
     }
 }

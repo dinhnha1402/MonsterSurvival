@@ -14,19 +14,8 @@ public class LoginHandler : MonoBehaviour
         string username = usernameInputField.text;
         string password = passwordInputField.text;
 
-        // Gọi hàm kiểm tra đăng nhập từ RealmController
-        //realmController.StartLogin(username, password);
+        MongoController.CheckLogin(username, password);
 
-        //if (isValidUser)
-        //{
-        //    Debug.Log("Đăng nhập thành công.");
-        //    // Xử lý đăng nhập thành công (chuyển scene, hiển thị thông tin người dùng, v.v.)
-        //}
-        //else
-        //{
-        //    Debug.Log("Đăng nhập thất bại.");
-        //    // Xử lý đăng nhập thất bại (hiển thị thông báo lỗi, v.v.)
-        //}
     }
 }
 
