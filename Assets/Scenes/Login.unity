@@ -533,14 +533,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 5
+  m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 5
+  m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 14
   m_CharacterLimit: 0
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 716563828}
   - component: {fileID: 716563827}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1415,7 +1415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usernameInputField: {fileID: 513191328}
   passwordInputField: {fileID: 1677008854}
-  realmController: {fileID: 1142340886}
+  MongoController: {fileID: 1142340886}
 --- !u!114 &1142340886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1425,9 +1425,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1142340883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd04a22365c09f345a8b66936d15ccf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 62adfe4bbf2f9e94991f5236e53cf0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loginStatusText: {fileID: 716563827}
 --- !u!1 &1234019626
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,13 +2650,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1142340885}
+        m_TargetAssemblyTypeName: LoginHandler, Assembly-CSharp
+        m_MethodName: OnLoginButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
