@@ -66,6 +66,7 @@
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
     <Compile Include="Assets\Scripts\Save\MongoDBConnector.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Save\UserAccount.cs" />
     <Compile Include="Assets\Scripts\ChangeInput.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />

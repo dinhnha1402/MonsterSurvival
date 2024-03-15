@@ -16,8 +16,10 @@ public class MongoDBConnector : MonoBehaviour
 {
     private MongoDB.Driver.MongoClient client;
     private IMongoDatabase database;
+    private SaveSystem saveSystem;
 
-    public TMP_Text loginStatusText;
+
+    [SerializeField] private TMP_Text loginStatusText;
 
     void Start()
     {
@@ -87,6 +89,7 @@ public class MongoDBConnector : MonoBehaviour
             if (document != null)
             {
                 loginStatusText.text = "Login successful!";
+                saveSystem.SaveUsername(username);
             }
             else
             {
@@ -136,4 +139,37 @@ public class MongoDBConnector : MonoBehaviour
         }
     }
 
+    public async void AddOrUpdateUserScore(string username, int score)
+    {
+
+        var collection = database.GetCollection<UserScore>("UserScore");
+
+        try
+        {
+            var existingUserFilter = new BsonDocument { { "username", username } };
+            var existingUser = await collection.Find(existingUserFilter).FirstOrDefaultAsync();
+
+            if (existingUser != null)
+            {
+                // Người dùng tồn tại, cập nhật điểm số của họ
+                var updateFilter = Builders<UserScore>.Filter.Eq("Username", username);
+                var updateDefinition = Builders<UserScore>.Update.Set("Score", score);
+                await collection.UpdateOneAsync(updateFilter, updateDefinition);
+            }
+            else
+            {
+                var newUserScore = new UserScore
+                {
+                    Username = username,
+                    Score = score
+                };
+
+                await collection.InsertOneAsync(newUserScore);
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error accessing MongoDB: {e.Message}");
+        }
+    }
 }
