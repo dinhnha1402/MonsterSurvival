@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using MongoDB.Bson;
 using System.Security.Cryptography;
 using System.Text;
 using Amazon.Runtime.Documents;
 using TMPro;
+using Assets.Scripts.Save;
+using System.Collections.ObjectModel;
 
 public class MongoDBConnector : MonoBehaviour
 {
@@ -67,28 +70,70 @@ public class MongoDBConnector : MonoBehaviour
     public async void CheckLogin(string username, string password)
     {
         var hashedPassword = HashPassword(password);
-        var filter = new BsonDocument {
-            { "username", username },
-            { "password", password }
-        };
 
         var collection = database.GetCollection<BsonDocument>("UserAccount");
 
         try
         {
-            var documents = await collection.Find(filter).ToListAsync();
-            if (documents.Count > 0)
+            // Specify the query to find the user with the given username and password
+            var filter = new BsonDocument
             {
-                loginStatusText.text = "Login thành công";
+                { "username", username },
+                { "password", hashedPassword }
+            };
+
+            var document = await collection.Find(filter).FirstOrDefaultAsync();
+
+            if (document != null)
+            {
+                loginStatusText.text = "Login successful!";
             }
             else
             {
-                loginStatusText.text = "Login thất bại";
+                loginStatusText.text = "Invalid username or password";
             }
         }
         catch (Exception e)
         {
-            Debug.LogError($"Error during login check: {e.Message}");
+            Debug.LogError($"Error accessing MongoDB: {e.Message}");
         }
     }
+
+    public async void RegisterUser(string username, string password)
+    {
+        var collection = database.GetCollection<UserAccount>("UserAccount");
+
+        try
+        {
+            // Kiểm tra xem username đã tồn tại chưa
+            var existingUserFilter = new BsonDocument { { "username", username } };
+            var existingUser = await collection.Find(existingUserFilter).FirstOrDefaultAsync();
+
+            if (existingUser != null)
+            {
+                // Nếu username đã tồn tại
+                loginStatusText.text = "Username already exists";
+                return;
+            }
+
+            // Nếu username chưa tồn tại, tạo tài khoản mới
+
+            var hashPassword = HashPassword(password);
+
+            // Nếu username chưa tồn tại, tạo tài khoản mới
+            var newUser = new UserAccount
+            {
+                Username = username,
+                Password = hashPassword
+            };
+
+            await collection.InsertOneAsync(newUser);
+            loginStatusText.text = "Registration successful!";
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error accessing MongoDB: {e.Message}");
+        }
+    }
+
 }

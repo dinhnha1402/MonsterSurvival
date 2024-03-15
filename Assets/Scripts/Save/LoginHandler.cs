@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class LoginHandler : MonoBehaviour
 {
-    public TMP_Text usernameInputField;
-    public TMP_Text passwordInputField;
+    [SerializeField] private TMP_InputField usernameInputField;
+    [SerializeField] private TMP_InputField passwordInputField;
     public MongoDBConnector MongoController; // Giả sử bạn có thể truy cập RealmController từ đây
 
     public void OnLoginButtonClicked()
@@ -15,6 +15,15 @@ public class LoginHandler : MonoBehaviour
         string password = passwordInputField.text;
 
         MongoController.CheckLogin(username, password);
+
+    }
+
+    public void OnRegisterButtonClicked()
+    {
+        string username = usernameInputField.text;
+        string password = passwordInputField.text;
+
+        MongoController.RegisterUser(username, password);
 
     }
 }
