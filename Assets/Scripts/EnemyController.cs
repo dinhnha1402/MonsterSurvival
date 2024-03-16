@@ -28,7 +28,6 @@ public class EnemyController : MonoBehaviour
 
         if (target != null)
         {
-<<<<<<< Updated upstream
             //enemy follow player
             theRb.velocity = (target.transform.position - transform.position).normalized * moveSpeed;
 
@@ -61,32 +60,12 @@ public class EnemyController : MonoBehaviour
             {
                 hitCounter -= Time.deltaTime;
             }
-=======
-            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
-        }
-        else if (theRb.velocity.x < 0)
-        {
-            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
-        }
-
-
-
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            PlayerHealthController.Instance.TakeDamage(damage);
-            anim.SetBool("IsClose", true);
->>>>>>> Stashed changes
         }
         else
         {
             anim.SetBool("IsClose", false);
         }
     }
-<<<<<<< Updated upstream
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -102,9 +81,6 @@ public class EnemyController : MonoBehaviour
 
 
 
-=======
- 
->>>>>>> Stashed changes
 }
 
 
