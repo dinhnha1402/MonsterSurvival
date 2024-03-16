@@ -23,12 +23,14 @@ public class PlayerController : MonoBehaviour
         
         moveInput.Normalize();
 
+
         if (anim.GetBool("IsDeath") == false)
         {
             transform.position += moveInput * moveSpeed * Time.deltaTime;
         }
 
         
+
         if (moveInput != Vector3.zero)
         {
             anim.SetBool("IsMoving", true);
