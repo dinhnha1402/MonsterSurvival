@@ -9,12 +9,16 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = FindObjectOfType<PlayerController>().transform;
+        target = PlayerHealthController.Instance.transform;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+        if (target != null)
+        {
+            transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+        }
+        
     }
 }

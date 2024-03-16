@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerHealthController : MonoBehaviour
     public float currentHealth, maxHealth;
     public Animator anim;
 
-
+    public Slider healthSlider;
 
     private void Awake()
     {
@@ -19,37 +20,30 @@ public class PlayerHealthController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = currentHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T)) 
-        {
-            TakeDamage(10f);
-        }
+        
     }
 
     public void TakeDamage(float damageTaken)
     {
         currentHealth -= damageTaken;
+        healthSlider.value = currentHealth;
 
         if (currentHealth <= 0)
         {
-            
-
 
             anim.SetBool("IsDeath", true);
 
-            StartCoroutine(DeathAndDisapear());
+            
+            Destroy(gameObject, 1f);
 
         }
     }
 
-    //Called after death animation executed
-    IEnumerator DeathAndDisapear()
-    {
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
-        gameObject.SetActive(false);
-    }
 }
