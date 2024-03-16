@@ -59,6 +59,8 @@ public class EnemySpawner : MonoBehaviour
 
             transform.position = target.position;
 
+
+
             int checkTarget = enemyToCheck + checkPerFrame;
 
             while (enemyToCheck < checkTarget)
@@ -74,13 +76,24 @@ public class EnemySpawner : MonoBehaviour
                             spawnedEnemies.RemoveAt(enemyToCheck);
 
                             checkTarget--;
-                        } 
+                        }
+                        else
+                        {
+                            enemyToCheck++;
+                        }
                     }
                     else
                     {
                         spawnedEnemies.RemoveAt(enemyToCheck);
+
                         checkTarget--;
                     }
+                }
+                else
+                {
+                    enemyToCheck = 0;
+
+                    checkTarget = 0;
                 }
             }
              
