@@ -40,13 +40,8 @@ public class PlayerHealthController : MonoBehaviour
 
             anim.SetBool("IsDeath", true);
 
-<<<<<<< Updated upstream
             
             Destroy(gameObject, 1f);
-=======
-            StartCoroutine(DeathAndDisapear());
-            
->>>>>>> Stashed changes
 
         }
     }
