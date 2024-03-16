@@ -70,6 +70,10 @@ public class EnemySpawner : MonoBehaviour
                         if (Vector3.Distance(transform.position, spawnedEnemies[enemyToCheck].transform.position) > despawnDistance)
                         {
                             Destroy(spawnedEnemies[enemyToCheck]);
+
+                            spawnedEnemies.RemoveAt(enemyToCheck);
+
+                            checkTarget--;
                         } 
                     }
                     else
