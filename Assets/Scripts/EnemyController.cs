@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
     private float hitCounter;
     private float distanceToPlayer = 0f;
 
+    public float health = 5f;
+
     void Start()
     {
         target = PlayerHealthController.Instance.gameObject;
@@ -78,7 +80,15 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    public void TakeDamage(float damageToTake)
+    {
+        health -= damageToTake;
 
+        if(health < 0f)
+        {
+            Destroy(gameObject);
+        }
+    }
 
 
 }

@@ -71,12 +71,14 @@
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Save\LoginHandler.cs" />
+    <Compile Include="Assets\Scripts\EnemyDamager.cs" />
     <Compile Include="Assets\Scripts\PlayerHealthController.cs" />
     <Compile Include="Assets\Scripts\Save\Highscore.cs" />
     <Compile Include="Assets\Scripts\EnemyAnimation.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
+    <Compile Include="Assets\Scripts\Weapons\SpinWeapon.cs" />
     <Compile Include="Assets\Scripts\Save\MainThreadDispatcher.cs" />
   </ItemGroup>
   <ItemGroup>
