@@ -80,17 +80,54 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    //public void TakeDamage(float damageToTake)
+    //{
+    //    health -= damageToTake;
+
+    //    anim.SetBool("IsAttacked", true);
+
+    //    Invoke("ResetIsAttacked", 0.1f);
+
+    //    if (health <= 0f)
+    //    {
+    //        Destroy(gameObject, 1f);
+    //    }
+    //}
+
+    //private void ResetIsAttacked()
+    //{
+    //    anim.SetBool("IsAttacked", false);
+    //}
+
+    private float lastHitTime;
+
     public void TakeDamage(float damageToTake)
     {
+        anim.SetBool("IsAttacked", true);
+
+        if (Time.time - lastHitTime < 0.5f)
+        {
+
+            anim.SetBool("IsAttacked", true);
+        }
+        else
+        {
+
+            anim.SetBool("IsAttacked", false);
+        }
+
+
+        lastHitTime = Time.time;
+
+
         health -= damageToTake;
 
-        if(health < 0f)
+     
+        if (health <= 0f)
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 1f);
         }
     }
-
-
 }
 
 
