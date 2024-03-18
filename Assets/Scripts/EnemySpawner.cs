@@ -59,6 +59,8 @@ public class EnemySpawner : MonoBehaviour
 
             transform.position = target.position;
 
+
+
             int checkTarget = enemyToCheck + checkPerFrame;
 
             while (enemyToCheck < checkTarget)
@@ -70,13 +72,28 @@ public class EnemySpawner : MonoBehaviour
                         if (Vector3.Distance(transform.position, spawnedEnemies[enemyToCheck].transform.position) > despawnDistance)
                         {
                             Destroy(spawnedEnemies[enemyToCheck]);
-                        } 
+
+                            spawnedEnemies.RemoveAt(enemyToCheck);
+
+                            checkTarget--;
+                        }
+                        else
+                        {
+                            enemyToCheck++;
+                        }
                     }
                     else
                     {
                         spawnedEnemies.RemoveAt(enemyToCheck);
+
                         checkTarget--;
                     }
+                }
+                else
+                {
+                    enemyToCheck = 0;
+
+                    checkTarget = 0;
                 }
             }
              

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4005712394724169034}
   m_Layer: 0
   m_Name: Enemy_LittleBat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,6 +56,7 @@ MonoBehaviour:
   damage: 1
   attackRange: 1
   hitDelay: 0.3
+  health: 5
 --- !u!95 &2288397310152386726
 Animator:
   serializedVersion: 5
