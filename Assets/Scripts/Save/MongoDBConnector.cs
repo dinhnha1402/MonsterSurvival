@@ -75,6 +75,7 @@ public class MongoDBConnector : MonoBehaviour
 
         var collection = database.GetCollection<BsonDocument>("UserAccount");
 
+
         try
         {
             // Specify the query to find the user with the given username and password
@@ -88,6 +89,7 @@ public class MongoDBConnector : MonoBehaviour
 
             if (document != null)
             {
+
                 loginStatusText.text = "Login successful!";
                 saveSystem.SaveUsername(username);
             }
@@ -95,15 +97,34 @@ public class MongoDBConnector : MonoBehaviour
             {
                 loginStatusText.text = "Invalid username or password";
             }
+
         }
         catch (Exception e)
         {
             Debug.LogError($"Error accessing MongoDB: {e.Message}");
         }
+
+        if (!loginStatusText.gameObject.activeInHierarchy)
+        {
+            loginStatusText.gameObject.SetActive(true);
+        }
+
     }
 
     public async void RegisterUser(string username, string password)
     {
+
+        if (username == "" || password == "")
+        {
+            if (!loginStatusText.gameObject.activeInHierarchy)
+            {
+                loginStatusText.gameObject.SetActive(true);
+            }
+
+            loginStatusText.text = "Username or password can't be empty";
+            return;
+        }
+
         var collection = database.GetCollection<UserAccount>("UserAccount");
 
         try
@@ -132,11 +153,18 @@ public class MongoDBConnector : MonoBehaviour
 
             await collection.InsertOneAsync(newUser);
             loginStatusText.text = "Registration successful!";
+
         }
         catch (Exception e)
         {
             Debug.LogError($"Error accessing MongoDB: {e.Message}");
         }
+
+        if (!loginStatusText.gameObject.activeInHierarchy)
+        {
+            loginStatusText.gameObject.SetActive(true);
+        }
+
     }
 
     public async void AddOrUpdateUserScore(string username, int score)

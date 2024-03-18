@@ -14,8 +14,8 @@ public class LoginHandler : MonoBehaviour
         string username = usernameInputField.text;
         string password = passwordInputField.text;
 
-        //MongoController.CheckLogin(username, password);
-        MongoController.AddOrUpdateUserScore(username, 100);
+        MongoController.CheckLogin(username, password);
+        //MongoController.AddOrUpdateUserScore(username, 100);
 
     }
 
