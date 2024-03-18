@@ -182,7 +182,7 @@ TextureImporter:
         height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 21, y: 22, z: 21, w: 20}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -245,7 +245,7 @@ TextureImporter:
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 8, y: 8, z: 9, w: 8}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -2062,6 +2062,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GUI_93
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 232
+        width: 85
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c44f0443982fcd4fab76569bc36349e
+      internalID: -746455606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2166,6 +2187,7 @@ TextureImporter:
       GUI_90: 1616395012
       GUI_91: -286177647
       GUI_92: 1114157497
+      GUI_93: -746455606
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
