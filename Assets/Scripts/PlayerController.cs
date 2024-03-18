@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    public Animator anim;
+    public SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +20,33 @@ public class PlayerController : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
-        Debug.Log(moveInput);
+        
+        moveInput.Normalize();
 
-        transform.position += moveInput * moveSpeed * Time.deltaTime;
+
+        if (anim.GetBool("IsDeath") == false)
+        {
+            transform.position += moveInput * moveSpeed * Time.deltaTime;
+        }
+
+        
+
+        if (moveInput != Vector3.zero)
+        {
+            anim.SetBool("IsMoving", true);
+
+            if (moveInput.x > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            if (moveInput.x < 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+        }
+        else
+        {
+            anim.SetBool("IsMoving", false);
+        }
     }
 }
