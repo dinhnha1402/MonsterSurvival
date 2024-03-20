@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PausePanel;
+    public GameObject SettingPanel;
 
     void Update()
     {
@@ -24,5 +25,20 @@ public class PauseMenu : MonoBehaviour
     {
         PausePanel.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void OpenSetting()
+    {
+        SettingPanel.SetActive(true);
+    }
+
+    public void CloseSetting()
+    {
+        SettingPanel.SetActive(false);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
