@@ -71,7 +71,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && hitCounter <= 0f)
+        if (collision.gameObject.tag == "Player" && hitCounter <= 0f && health > 0f)
         {
             PlayerHealthController.Instance.TakeDamage(damage);
 
@@ -80,54 +80,44 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    //public void TakeDamage(float damageToTake)
-    //{
-    //    health -= damageToTake;
-
-    //    anim.SetBool("IsAttacked", true);
-
-    //    Invoke("ResetIsAttacked", 0.1f);
-
-    //    if (health <= 0f)
-    //    {
-    //        Destroy(gameObject, 1f);
-    //    }
-    //}
-
-    //private void ResetIsAttacked()
-    //{
-    //    anim.SetBool("IsAttacked", false);
-    //}
-
-    private float lastHitTime;
-
     public void TakeDamage(float damageToTake)
     {
-        anim.SetBool("IsAttacked", true);
+        health -= damageToTake;
 
-        if (Time.time - lastHitTime < 0.5f)
+        
+
+        if (health <= 0f)
+            
         {
+            moveSpeed = 0f;
 
-            anim.SetBool("IsAttacked", true);
+            StartCoroutine(AnimDeath());
         }
         else
         {
-
-            anim.SetBool("IsAttacked", false);
-        }
-
-
-        lastHitTime = Time.time;
-
-
-        health -= damageToTake;
-
-     
-        if (health <= 0f)
-        {
-            Destroy(gameObject, 1f);
+            StartCoroutine(AnimDamaged());
         }
     }
+
+    IEnumerator AnimDamaged()
+    {
+        anim.SetBool("IsAttacked", true);
+
+        yield return new WaitForSeconds(.2f);
+
+        anim.SetBool("IsAttacked", false);
+    }
+
+    IEnumerator AnimDeath()
+    {
+        anim.SetBool("IsDeath", true);
+
+        yield return new WaitForSeconds(1f);
+
+        Destroy(gameObject);
+    }
+
+
 }
 
 

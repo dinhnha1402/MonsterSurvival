@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
     // Update is called once per frame
 
@@ -20,33 +20,35 @@ public class PlayerController : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
-        
+
         moveInput.Normalize();
 
 
         if (anim.GetBool("IsDeath") == false)
         {
             transform.position += moveInput * moveSpeed * Time.deltaTime;
-        }
 
-        
 
-        if (moveInput != Vector3.zero)
-        {
-            anim.SetBool("IsMoving", true);
 
-            if (moveInput.x > 0)
+
+            if (moveInput != Vector3.zero)
             {
-                spriteRenderer.flipX = false;
+                anim.SetBool("IsMoving", true);
+
+                if (moveInput.x > 0)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                if (moveInput.x < 0)
+                {
+                    spriteRenderer.flipX = true;
+                }
             }
-            if (moveInput.x < 0)
+            else
             {
-                spriteRenderer.flipX = true;
+                anim.SetBool("IsMoving", false);
             }
-        }
-        else
-        {
-            anim.SetBool("IsMoving", false);
+
         }
     }
 }

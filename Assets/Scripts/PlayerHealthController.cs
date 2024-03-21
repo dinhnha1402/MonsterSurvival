@@ -37,13 +37,17 @@ public class PlayerHealthController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-
-            anim.SetBool("IsDeath", true);
-
-            
-            Destroy(gameObject, 1f);
-
+            StartCoroutine(AnimDeath());
         }
+    }
+
+    IEnumerator AnimDeath()
+    {
+        anim.SetBool("IsDeath", true);
+
+        yield return new WaitForSeconds(1f);
+
+        Destroy(gameObject);
     }
 
 }

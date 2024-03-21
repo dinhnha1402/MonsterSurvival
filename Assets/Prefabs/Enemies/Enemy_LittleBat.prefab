@@ -56,7 +56,7 @@ MonoBehaviour:
   damage: 1
   attackRange: 1
   hitDelay: 0.3
-  health: 5
+  health: 10
 --- !u!95 &2288397310152386726
 Animator:
   serializedVersion: 5
