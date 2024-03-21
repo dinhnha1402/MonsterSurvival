@@ -28,7 +28,24 @@
    - **Ghi chú:** Đang thực hiện tiếp phần pause game
 
 3. **Đồ Họa/Âm Thanh:**
+
    - **Công việc:** Thêm background music, SFX,...
    - **Thời gian:** 4 tiếng
    - **Trạng thái:** Đang tiến hành
    - **Ghi chú:** Đang điều chỉnh âm thanh theo setting
+
+   (21/3 - 22/3)
+
+4. **Hoàn tất Setting UI và các function trong Setting**
+
+   - **Công việc:** Hoàn tất UI và function trong Setting UI
+   - **Thời gian:** 3 tiếng
+   - **Trạng thái:** Hoàn thành
+   - **Ghi chú:** Đã hoàn tất có thể tăng giảm âm lượng và điều chỉnh game graphic
+
+5. **Điều chỉnh Load save game UI**
+
+   - **Công việc:** Hoàn tất UI và function cơ bản của Load game
+   - **Thời gian:** 3 tiếng
+   - **Trạng thái:** Đang tiến hành
+   - **Ghi chú:** Đã hoàn tất UI còn cần làm thêm chức năng chọn và load được các thông tin trong save game.

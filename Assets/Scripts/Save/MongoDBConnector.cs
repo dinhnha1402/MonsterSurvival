@@ -17,9 +17,10 @@ public class MongoDBConnector : MonoBehaviour
     private MongoDB.Driver.MongoClient client;
     private IMongoDatabase database;
     private SaveSystem saveSystem;
-
-
     [SerializeField] private TMP_Text loginStatusText;
+
+    [SerializeField] private GameObject loadSaveMenu;
+    [SerializeField] private GameObject loginMenu;
 
     void Start()
     {
@@ -91,7 +92,9 @@ public class MongoDBConnector : MonoBehaviour
             {
 
                 loginStatusText.text = "Login successful!";
+                OpenLoadSaveGameMenu();
                 saveSystem.SaveUsername(username);
+                
             }
             else
             {
@@ -153,6 +156,7 @@ public class MongoDBConnector : MonoBehaviour
 
             await collection.InsertOneAsync(newUser);
             loginStatusText.text = "Registration successful!";
+            OpenLoadSaveGameMenu();
 
         }
         catch (Exception e)
@@ -199,5 +203,11 @@ public class MongoDBConnector : MonoBehaviour
         {
             Debug.LogError($"Error accessing MongoDB: {e.Message}");
         }
+    }
+
+    public void OpenLoadSaveGameMenu()
+    {
+        loadSaveMenu.SetActive(true);
+        loginMenu.SetActive(false);
     }
 }
