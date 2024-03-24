@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -17,11 +18,22 @@ public class EnemyController : MonoBehaviour
     private float hitCounter;
     private float distanceToPlayer = 0f;
 
+    // Enemies health
+    public Slider healthSlider;
+
     public float health = 5f;
+    public float maxHealth;
+
+    public ParticleSystem bloodEffect;
 
     void Start()
     {
         target = PlayerHealthController.Instance.gameObject;
+
+        maxHealth = health;
+
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = health;
     }
 
     // Update is called once per frame
@@ -82,9 +94,19 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(float damageToTake)
     {
-        health -= damageToTake;
 
+        bloodEffect.Play();
+
+        if (!healthSlider.gameObject.activeSelf) 
+        {
+            healthSlider.gameObject.SetActive(true);
+        }
         
+        
+        health -= damageToTake;
+        healthSlider.value = health;
+
+
 
         if (health <= 0f)
             
