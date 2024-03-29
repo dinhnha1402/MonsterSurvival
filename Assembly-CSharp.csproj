@@ -60,12 +60,15 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.11f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Map\MapController.cs" />
     <Compile Include="Assets\Scripts\Save\UserScore.cs" />
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
+    <Compile Include="Assets\Scripts\Map\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Pause\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Save\MongoDBConnector.cs" />
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
+    <Compile Include="Assets\Scripts\Map\ChunkTrigger.cs" />
     <Compile Include="Assets\Scripts\Pause\SettingsMenuManager.cs" />
     <Compile Include="Assets\Scripts\Save\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Save\UserAccount.cs" />
@@ -78,6 +81,7 @@
     <Compile Include="Assets\Scripts\Save\Highscore.cs" />
     <Compile Include="Assets\Scripts\EnemyAnimation.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Map\PropRandomizes.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
     <Compile Include="Assets\Scripts\Weapons\SpinWeapon.cs" />
