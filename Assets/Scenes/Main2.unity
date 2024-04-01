@@ -1248,6 +1248,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288914601}
   m_CullTransparentMesh: 1
+--- !u!1 &329010703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1474085778880385150, guid: d47ab5265afe6f14db8880b9041026e3, type: 3}
+  m_PrefabInstance: {fileID: 8462773825333708983}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &335506051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,19 +1283,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainChunks:
-  - {fileID: 1474085778880385150, guid: d47ab5265afe6f14db8880b9041026e3, type: 3}
   - {fileID: 1474085778880385150, guid: 2f91a7cf04d09044eb4464ccd4055b7b, type: 3}
-  - {fileID: 1474085778880385150, guid: e85397462c44424488e877eca6111b69, type: 3}
   player: {fileID: 1360117721}
-  checkerRadius: 0.2
+  checkerRadius: 0.5
   noTerrainPosition: {x: 0, y: 0, z: 0}
   terrainMask:
     serializedVersion: 2
     m_Bits: 64
   currentChunk: {fileID: 0}
-  spawnedChunks: []
-  maxOpDist: 0
-  optimizerCooldownDur: 0
+  spawnedChunks:
+  - {fileID: 329010703}
+  maxOpDist: 50
+  optimizerCooldownDur: 1
 --- !u!4 &335506053
 Transform:
   m_ObjectHideFlags: 0
@@ -1360,7 +1364,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.5
+  orthographic size: 5.41
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8515241148466454486}
   m_Layer: 0
-  m_Name: LeftUp
+  m_Name: Left Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7215534320916779447}
   m_Layer: 0
-  m_Name: RightUp
+  m_Name: Right Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3712165352145351793}
   m_Layer: 0
-  m_Name: LeftDown
+  m_Name: Left Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4753,7 +4753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8590aafc13e886c448023f69ea8d8a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMap: {fileID: 0}
+  targetMap: {fileID: 1474085778880385150}
 --- !u!61 &7380923360561164707
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4871,7 +4871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4130102850687767517}
   m_Layer: 0
-  m_Name: RightDown
+  m_Name: Right Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
