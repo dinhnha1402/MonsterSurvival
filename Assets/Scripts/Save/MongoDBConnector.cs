@@ -17,9 +17,10 @@ public class MongoDBConnector : MonoBehaviour
     private MongoDB.Driver.MongoClient client;
     private IMongoDatabase database;
     private SaveSystem saveSystem;
-
-
     [SerializeField] private TMP_Text loginStatusText;
+
+    [SerializeField] private GameObject loadSaveMenu;
+    [SerializeField] private GameObject loginMenu;
 
     void Start()
     {
@@ -75,6 +76,7 @@ public class MongoDBConnector : MonoBehaviour
 
         var collection = database.GetCollection<BsonDocument>("UserAccount");
 
+
         try
         {
             // Specify the query to find the user with the given username and password
@@ -88,22 +90,44 @@ public class MongoDBConnector : MonoBehaviour
 
             if (document != null)
             {
+
                 loginStatusText.text = "Login successful!";
+                OpenLoadSaveGameMenu();
                 saveSystem.SaveUsername(username);
+                
             }
             else
             {
                 loginStatusText.text = "Invalid username or password";
             }
+
         }
         catch (Exception e)
         {
             Debug.LogError($"Error accessing MongoDB: {e.Message}");
         }
+
+        if (!loginStatusText.gameObject.activeInHierarchy)
+        {
+            loginStatusText.gameObject.SetActive(true);
+        }
+
     }
 
     public async void RegisterUser(string username, string password)
     {
+
+        if (username == "" || password == "")
+        {
+            if (!loginStatusText.gameObject.activeInHierarchy)
+            {
+                loginStatusText.gameObject.SetActive(true);
+            }
+
+            loginStatusText.text = "Username or password can't be empty";
+            return;
+        }
+
         var collection = database.GetCollection<UserAccount>("UserAccount");
 
         try
@@ -132,11 +156,19 @@ public class MongoDBConnector : MonoBehaviour
 
             await collection.InsertOneAsync(newUser);
             loginStatusText.text = "Registration successful!";
+            OpenLoadSaveGameMenu();
+
         }
         catch (Exception e)
         {
             Debug.LogError($"Error accessing MongoDB: {e.Message}");
         }
+
+        if (!loginStatusText.gameObject.activeInHierarchy)
+        {
+            loginStatusText.gameObject.SetActive(true);
+        }
+
     }
 
     public async void AddOrUpdateUserScore(string username, int score)
@@ -171,5 +203,11 @@ public class MongoDBConnector : MonoBehaviour
         {
             Debug.LogError($"Error accessing MongoDB: {e.Message}");
         }
+    }
+
+    public void OpenLoadSaveGameMenu()
+    {
+        loadSaveMenu.SetActive(true);
+        loginMenu.SetActive(false);
     }
 }

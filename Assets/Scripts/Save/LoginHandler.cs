@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoginHandler : MonoBehaviour
 {
     [SerializeField] private TMP_InputField usernameInputField;
     [SerializeField] private TMP_InputField passwordInputField;
-    public MongoDBConnector MongoController; // Giả sử bạn có thể truy cập RealmController từ đây
+    [SerializeField] private MongoDBConnector mongoController;
 
     public void OnLoginButtonClicked()
     {
         string username = usernameInputField.text;
         string password = passwordInputField.text;
 
-        //MongoController.CheckLogin(username, password);
-        MongoController.AddOrUpdateUserScore(username, 100);
+        mongoController.CheckLogin(username, password);
+        //MongoController.AddOrUpdateUserScore(username, 100);
 
     }
 
@@ -24,8 +25,18 @@ public class LoginHandler : MonoBehaviour
         string username = usernameInputField.text;
         string password = passwordInputField.text;
 
-        MongoController.RegisterUser(username, password);
+        mongoController.RegisterUser(username, password);
 
+    }
+
+    public void OnNewGameButtonClicked()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
 

@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Animator anim;
     public SpriteRenderer spriteRenderer;
+
+    // Declare moveDir at the class level
+    public Vector2 moveDir;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
         moveInput.Normalize();
 
+        // Update moveDir based on moveInput
+        moveDir = new Vector2(moveInput.x, moveInput.y);
 
         if (anim.GetBool("IsDeath") == false)
         {
