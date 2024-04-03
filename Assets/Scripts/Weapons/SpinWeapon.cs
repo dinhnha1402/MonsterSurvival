@@ -12,7 +12,7 @@ public class SpinWeapon : MonoBehaviour
 
     private float spawnCounter;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         

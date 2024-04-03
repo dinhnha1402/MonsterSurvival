@@ -72,7 +72,6 @@
     <Compile Include="Assets\Scripts\Pause\SettingsMenuManager.cs" />
     <Compile Include="Assets\Scripts\Save\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Save\UserAccount.cs" />
-    <Compile Include="Assets\Scripts\ChangeInput.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Save\LoginHandler.cs" />
