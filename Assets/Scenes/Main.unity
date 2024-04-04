@@ -556,7 +556,7 @@ Transform:
   m_GameObject: {fileID: 117321155}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.677, z: 0}
+  m_LocalPosition: {x: 0, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -947,7 +947,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 805562853}
-  - {fileID: 1973785961}
   m_Father: {fileID: 174142429}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &183924389
@@ -962,10 +961,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a7b53cc7544da40bdae64a67695d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: -180
   holder: {fileID: 805562853}
-  weaponToSpawn: {fileID: 1973785961}
-  timeBetweenSpawn: 6
+  weaponToSpawn: {fileID: 899015171}
+  rotateSpeed: 180
+  lifeTime: 5
+  spawnTime: 1.5
 --- !u!1 &204076128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,7 +2127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 100
+  maxHealth: 1000000
   anim: {fileID: 631132833}
   healthSlider: {fileID: 1897650863}
 --- !u!70 &631132836
@@ -2510,7 +2510,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 899015171}
   m_Father: {fileID: 183924388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &819995965
@@ -7822,7 +7823,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 819995966}
-  m_Father: {fileID: 1973785961}
+  m_Father: {fileID: 805562853}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &899015172
 CircleCollider2D:
@@ -7924,8 +7925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 5
-  lifeTime: 3
-  growSpeed: 4
+  shouldKnockback: 1
 --- !u!1 &944117334
 GameObject:
   m_ObjectHideFlags: 0
@@ -10737,38 +10737,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934514889}
   m_CullTransparentMesh: 1
---- !u!1 &1973785960
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1973785961}
-  m_Layer: 0
-  m_Name: ShurikenHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1973785961
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973785960}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 899015171}
-  m_Father: {fileID: 183924388}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1975838036
 GameObject:
   m_ObjectHideFlags: 0
@@ -11258,12 +11226,12 @@ RectTransform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 416935510}
   - {fileID: 631132831}
-  - {fileID: 1613497184}
   - {fileID: 261637874}
+  - {fileID: 1301940930}
   - {fileID: 588698774}
   - {fileID: 596969110}
-  - {fileID: 416935510}
   - {fileID: 35741792}
-  - {fileID: 1301940930}
   - {fileID: 985181505}
+  - {fileID: 1613497184}

@@ -9,8 +9,8 @@ public class EnemySpawner : MonoBehaviour
     public float minTimeToSpawn;
     public float maxTimeToSpawn;
 
-    private float timeToSpawn;
-    private float spawnCounter;
+    private float spawnTime;
+    private float spawnTimeCounter;
 
     public Transform minSpawn, maxSpawn;
 
@@ -26,9 +26,9 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeToSpawn = Random.Range(minTimeToSpawn, maxTimeToSpawn);
+        spawnTime = Random.Range(minTimeToSpawn, maxTimeToSpawn);
 
-        spawnCounter = timeToSpawn;
+        spawnTimeCounter = spawnTime;
 
         target = PlayerHealthController.Instance.transform;
 
@@ -42,14 +42,14 @@ public class EnemySpawner : MonoBehaviour
 
         if (target != null)
         {
-            
-            spawnCounter -= Time.deltaTime;
 
-            if (spawnCounter <= 0)
+            spawnTimeCounter -= Time.deltaTime;
+
+            if (spawnTimeCounter <= 0)
             {
-                timeToSpawn = Random.Range(minTimeToSpawn, maxTimeToSpawn);
+                spawnTime = Random.Range(minTimeToSpawn, maxTimeToSpawn);
 
-                spawnCounter = timeToSpawn;
+                spawnTimeCounter = spawnTime;
 
                 GameObject newEnemy = Instantiate(enemyToSpawn[Random.Range(0, enemyToSpawn.Length)], SelectSpawnPoint(), transform.rotation);
 

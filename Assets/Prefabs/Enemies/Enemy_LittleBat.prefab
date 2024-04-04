@@ -132,11 +132,12 @@ MonoBehaviour:
   moveSpeed: 3
   damage: 1
   attackRange: 1
-  hitDelay: 0.3
+  hitDelayTime: 1
   healthSlider: {fileID: 8668755831278361022}
   health: 10
   maxHealth: 0
   bloodEffect: {fileID: 8105004165932937013}
+  knockbackTime: 0.3
 --- !u!95 &2288397310152386726
 Animator:
   serializedVersion: 5
@@ -308,7 +309,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2010381779
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 311028214, guid: 03b265b8b75c78c4f8df62f793fe316d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
