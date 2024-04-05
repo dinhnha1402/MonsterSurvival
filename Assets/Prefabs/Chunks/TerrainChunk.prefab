@@ -124,8 +124,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3070441882901320274}
-  - {fileID: 5956327231002083633}
   - {fileID: 2003011143151851803}
   - {fileID: 3556512007813806613}
   - {fileID: 3550880742925769945}
@@ -135,6 +133,8 @@ Transform:
   - {fileID: 6250197669107350045}
   - {fileID: 3580470901843992233}
   - {fileID: 7430300536153104665}
+  - {fileID: 3070441882901320274}
+  - {fileID: 5956327231002083633}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5053236715519050143
@@ -4598,8 +4598,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 891749573
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

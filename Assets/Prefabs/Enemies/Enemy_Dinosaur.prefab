@@ -247,7 +247,6 @@ GameObject:
   - component: {fileID: 9054504067611348016}
   - component: {fileID: 823239514051618586}
   - component: {fileID: 5580722707931585646}
-  - component: {fileID: 5398153914151027282}
   m_Layer: 0
   m_Name: Enemy_Dinosaur
   m_TagString: Enemy
@@ -380,23 +379,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.16920795, y: 0.0046570105}
   m_Size: {x: 1.3943406, y: 1.0093882}
   m_Direction: 1
---- !u!114 &5398153914151027282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005531053131157298}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39c5d8a8e44f56409ad2035f10eb35d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 549871956295258837}
-  speed: 0
-  minSize: 0
-  maxSize: 0
-  anim: {fileID: 9054504067611348016}
 --- !u!1 &5076776396599244264
 GameObject:
   m_ObjectHideFlags: 0

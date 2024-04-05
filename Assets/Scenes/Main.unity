@@ -1530,6 +1530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 402014714}
+  - component: {fileID: 402014715}
   m_Layer: 0
   m_Name: DamageNumber
   m_TagString: Untagged
@@ -1546,13 +1547,28 @@ Transform:
   m_GameObject: {fileID: 402014713}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.074963, y: -2.42, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1928129987}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &402014715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402014713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d47bd89a88057439f9647c6ebf0f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageCanvas: {fileID: 1928129987}
+  damageText: {fileID: 1245356954}
+  lifeTime: 0
 --- !u!1 &416935506
 GameObject:
   m_ObjectHideFlags: 0
@@ -3002,6 +3018,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TerrainChunk
       objectReference: {fileID: 0}
+    - target: {fileID: 2758005324752659575, guid: d47ab5265afe6f14db8880b9041026e3, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758005324752659575, guid: d47ab5265afe6f14db8880b9041026e3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 891749573
+      objectReference: {fileID: 0}
     - target: {fileID: 5290506589455804124, guid: d47ab5265afe6f14db8880b9041026e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3962,10 +3986,10 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245356952}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1928129987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3994,10 +4018,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 0123456789
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aff4dc1f40de24d41af9aadf8f236f2b, type: 2}
+  m_sharedMaterial: {fileID: 5038523140635788747, guid: aff4dc1f40de24d41af9aadf8f236f2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4021,15 +4045,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 72
+  m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -5825,7 +5849,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 1924532739
+  m_SortingLayerID: -2010381779
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1934514889
@@ -6498,6 +6522,14 @@ PrefabInstance:
     - target: {fileID: 7017133265967252943, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967449362028711370, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967449362028711370, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1646509361
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

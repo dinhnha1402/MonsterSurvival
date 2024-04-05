@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 2288397310152386726}
   - component: {fileID: 5767897865816251152}
   - component: {fileID: 3409842747800383037}
-  - component: {fileID: 4005712394724169034}
   m_Layer: 0
   m_Name: Enemy_LittleBat
   m_TagString: Enemy
@@ -221,23 +220,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.35
---- !u!114 &4005712394724169034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099289098961432789}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39c5d8a8e44f56409ad2035f10eb35d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 492877183761374010}
-  speed: 0
-  minSize: 0
-  maxSize: 0
-  anim: {fileID: 2288397310152386726}
 --- !u!1 &1804383411230414013
 GameObject:
   m_ObjectHideFlags: 0

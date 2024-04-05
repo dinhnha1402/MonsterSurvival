@@ -4889,9 +4889,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6914765181354966627}
+  - component: {fileID: 3857529152042684725}
   - component: {fileID: 8967449362028711370}
   - component: {fileID: 859241224575205807}
-  - component: {fileID: 3857529152042684725}
   - component: {fileID: 877973502609209388}
   m_Layer: 0
   m_Name: Shuriken
@@ -4916,6 +4916,20 @@ Transform:
   - {fileID: 6983294413128206892}
   m_Father: {fileID: 2135284646338195249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3857529152042684725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7043584324144822402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa19f210d0c4db459ace960a5cfcc33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 5
+  shouldKnockback: 1
 --- !u!212 &8967449362028711370
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5003,20 +5017,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &3857529152042684725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7043584324144822402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfa19f210d0c4db459ace960a5cfcc33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 5
-  shouldKnockback: 1
 --- !u!95 &877973502609209388
 Animator:
   serializedVersion: 5
