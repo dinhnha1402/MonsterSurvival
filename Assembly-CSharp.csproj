@@ -66,6 +66,7 @@
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
     <Compile Include="Assets\Scripts\Weapons\Damager.cs" />
     <Compile Include="Assets\Scripts\Controller\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\Weapons\DamageNumberDestroyer.cs" />
     <Compile Include="Assets\Scripts\Map\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Pause\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Controller\PlayerHealthController.cs" />
@@ -82,8 +83,8 @@
     <Compile Include="Assets\Scripts\Map\PropRandomizes.cs" />
     <Compile Include="Assets\Scripts\Controller\PlayerController.cs" />
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
+    <Compile Include="Assets\Scripts\Controller\DamageNumberController.cs" />
     <Compile Include="Assets\Scripts\Weapons\SpinWeapon.cs" />
-    <Compile Include="Assets\Scripts\DamageNumberController.cs" />
     <Compile Include="Assets\Scripts\Save\MainThreadDispatcher.cs" />
   </ItemGroup>
   <ItemGroup>
