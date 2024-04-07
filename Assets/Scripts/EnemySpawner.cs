@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-
-    public GameObject[] enemyToSpawn;
-    public float minTimeToSpawn;
-    public float maxTimeToSpawn;
-
-    private float spawnTime;
     private float spawnTimeCounter;
 
     public Transform minSpawn, maxSpawn;
@@ -23,17 +17,23 @@ public class EnemySpawner : MonoBehaviour
     public int checkPerFrame;
     private int enemyToCheck;
 
+    public List<WaveInfo> waves;
+
+    private int currentWave;
+
+    private float waveLengthCounter;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        spawnTime = Random.Range(minTimeToSpawn, maxTimeToSpawn);
-
-        spawnTimeCounter = spawnTime;
-
         target = PlayerHealthController.Instance.transform;
 
         despawnDistance = Vector3.Distance(transform.position, maxSpawn.position) + 4;
 
+        currentWave = -1;
+
+        GoToNextWave();
     }
 
     // Update is called once per frame
@@ -42,19 +42,25 @@ public class EnemySpawner : MonoBehaviour
 
         if (target != null)
         {
-
-            spawnTimeCounter -= Time.deltaTime;
-
-            if (spawnTimeCounter <= 0)
+            if (currentWave < waves.Count)
             {
-                spawnTime = Random.Range(minTimeToSpawn, maxTimeToSpawn);
+                waveLengthCounter -= Time.deltaTime;
 
-                spawnTimeCounter = spawnTime;
+                if (waveLengthCounter <= 0)
+                {
+                    GoToNextWave();
+                }
 
-                GameObject newEnemy = Instantiate(enemyToSpawn[Random.Range(0, enemyToSpawn.Length)], SelectSpawnPoint(), transform.rotation);
+                spawnTimeCounter -= Time.deltaTime;
 
-                spawnedEnemies.Add(newEnemy);
+                if (spawnTimeCounter <= 0)
+                {
+                    spawnTimeCounter = Random.Range(waves[currentWave].minTimeToSpawn, waves[currentWave].maxTimeToSpawn);
 
+                    GameObject newEnemy = Instantiate(waves[currentWave].enemyToSpawn[Random.Range(0, waves[currentWave].enemyToSpawn.Length)], SelectSpawnPoint(), Quaternion.identity);
+
+                    spawnedEnemies.Add(newEnemy);
+                }
             }
 
             transform.position = target.position;
@@ -135,4 +141,28 @@ public class EnemySpawner : MonoBehaviour
 
         return spawnPoint;
     }
+
+    public void GoToNextWave()
+    {
+        currentWave++;
+
+        if (currentWave >= waves.Count)
+        {
+            currentWave = waves.Count - 1;
+        }
+
+        waveLengthCounter = waves[currentWave].waveLength;
+
+        spawnTimeCounter = Random.Range(waves[currentWave].minTimeToSpawn, waves[currentWave].maxTimeToSpawn);
+    }
+}
+
+[System.Serializable]
+public class WaveInfo
+{
+    public GameObject[] enemyToSpawn;
+    public float waveLength = 60f;
+    public float minTimeToSpawn = 1f;
+    public float maxTimeToSpawn = 3f;
+
 }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class DamageNumberController : MonoBehaviour
 {
@@ -34,13 +33,9 @@ public class DamageNumberController : MonoBehaviour
 
         int roundedDamage = Mathf.RoundToInt(damageAmount);
 
-        //GameObject newDamageText = Instantiate(damageText, location, Quaternion.identity, damageCanvas);
-
         GameObject newDamageText = GetFromPool();
 
-
-
-        newDamageText.GetComponent<TMP_Text>().text = roundedDamage.ToString();
+        newDamageText.GetComponent<DamageNumberDestroyer>().Setup(roundedDamage);
 
         newDamageText.transform.position = location;
 

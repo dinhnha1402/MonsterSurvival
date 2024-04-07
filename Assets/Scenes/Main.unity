@@ -1025,14 +1025,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edfde8521181cc344b8e607532f47b6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn:
-  - {fileID: 1099289098961432789, guid: 18edeccdfe4a4d146be6e96fecfae0a0, type: 3}
-  - {fileID: 2005531053131157298, guid: 9dfea3f4a7aa91f46abf344c109b9226, type: 3}
-  minTimeToSpawn: 0.5
-  maxTimeToSpawn: 2
   minSpawn: {fileID: 1105411229}
   maxSpawn: {fileID: 1183009884}
   checkPerFrame: 10
+  waves:
+  - enemyToSpawn:
+    - {fileID: 1099289098961432789, guid: 18edeccdfe4a4d146be6e96fecfae0a0, type: 3}
+    waveLength: 60
+    minTimeToSpawn: 1
+    maxTimeToSpawn: 3
+  - enemyToSpawn:
+    - {fileID: 1099289098961432789, guid: 18edeccdfe4a4d146be6e96fecfae0a0, type: 3}
+    - {fileID: 2005531053131157298, guid: 9dfea3f4a7aa91f46abf344c109b9226, type: 3}
+    waveLength: 60
+    minTimeToSpawn: 0.5
+    maxTimeToSpawn: 2
 --- !u!4 &261637874
 Transform:
   m_ObjectHideFlags: 0
