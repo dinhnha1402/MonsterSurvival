@@ -35,7 +35,7 @@ public class DamageNumberController : MonoBehaviour
 
         GameObject newDamageText = GetFromPool();
 
-        newDamageText.GetComponent<DamageNumberDestroyer>().Setup(roundedDamage);
+        newDamageText.GetComponent<DamageNumber>().Setup(roundedDamage);
 
         newDamageText.transform.position = location;
 

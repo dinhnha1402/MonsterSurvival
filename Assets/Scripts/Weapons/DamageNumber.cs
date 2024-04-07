@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DamageNumberDestroyer : MonoBehaviour
+public class DamageNumber : MonoBehaviour
 {
     public float lifeTime;
     private float lifeTimeCounter;
