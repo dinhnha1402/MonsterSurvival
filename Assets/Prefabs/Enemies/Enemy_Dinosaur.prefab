@@ -296,6 +296,7 @@ MonoBehaviour:
   maxHealth: 0
   bloodEffect: {fileID: 3115606744136440979}
   knockbackTime: 0.15
+  expDrop: 2
 --- !u!95 &9054504067611348016
 Animator:
   serializedVersion: 5

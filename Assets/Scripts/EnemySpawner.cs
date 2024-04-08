@@ -42,6 +42,8 @@ public class EnemySpawner : MonoBehaviour
 
         if (target != null)
         {
+            transform.position = target.position;
+
             if (currentWave < waves.Count)
             {
                 waveLengthCounter -= Time.deltaTime;
@@ -63,7 +65,7 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
 
-            transform.position = target.position;
+
 
 
 

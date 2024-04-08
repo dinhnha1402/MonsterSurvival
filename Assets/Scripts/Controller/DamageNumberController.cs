@@ -51,7 +51,8 @@ public class DamageNumberController : MonoBehaviour
         if (damageTextPool.Count == 0)
         {
             damageTextToOutPut = Instantiate(damageText, damageCanvas);
-        } else
+        }
+        else
         {
             damageTextToOutPut = damageTextPool[0];
 

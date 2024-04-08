@@ -36,6 +36,8 @@ public class EnemyController : MonoBehaviour
     public float knockbackTime = .3f;
     private float knockbackTimeCounter;
 
+    public int expDrop = 1;
+
     void Start()
     {
         target = PlayerHealthController.Instance.gameObject;
@@ -138,6 +140,8 @@ public class EnemyController : MonoBehaviour
 
         {
             moveSpeed = 0f;
+
+            ExperienceLevelController.Instance.SpawnExp(transform.position, expDrop);
 
             StartCoroutine(AnimDeath());
         }

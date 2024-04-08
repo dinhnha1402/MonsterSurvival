@@ -8,8 +8,10 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public SpriteRenderer spriteRenderer;
 
-    // Declare moveDir at the class level
+    
     public Vector2 moveDir;
+
+    public float pickupRange = 1.5f;
 
     // Start is called before the first frame update
     void Start()
