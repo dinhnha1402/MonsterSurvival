@@ -32,6 +32,7 @@ public class SpinWeapon : Weapon
         lifeTimeCounter = lifeTime;
 
         spawnTimeCounter = spawnTime;
+
     }
 
     // Update is called once per frame
