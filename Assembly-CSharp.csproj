@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Controller\ExperienceLevelController.cs" />
     <Compile Include="Assets\Scripts\Save\Highscore.cs" />
     <Compile Include="Assets\Scripts\Controller\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Map\PropRandomizes.cs" />
     <Compile Include="Assets\Scripts\Controller\UIController.cs" />

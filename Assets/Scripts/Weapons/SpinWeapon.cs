@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpinWeapon : MonoBehaviour
+public class SpinWeapon : Weapon
 {
     public Transform holder, weaponToSpawn;
 
@@ -21,7 +21,9 @@ public class SpinWeapon : MonoBehaviour
 
     void Start()
     {
-        targetSizeFix = weaponToSpawn.localScale;
+        targetSizeFix = weaponToSpawn.transform.localScale;
+
+        SetStats();
 
         targetSize = targetSizeFix;
 
@@ -66,5 +68,30 @@ public class SpinWeapon : MonoBehaviour
                 spawnTimeCounter = spawnTime;
             }
         }
+
+        if (statsUpdated)
+        {
+            statsUpdated = false;
+
+            SetStats();
+        }
+    }
+
+    public void SetStats()
+    {
+        weaponToSpawn.GetComponent<Damager>().damageAmount = stats[weaponLevel].damage;
+
+        targetSizeFix = targetSizeFix * stats[weaponLevel].range;
+
+        rotateSpeed = rotateSpeed * stats[weaponLevel].speed;
+
+        lifeTime = stats[weaponLevel].duration;
+
+        spawnTime = stats[weaponLevel].attackSpeed;
+
+        lifeTimeCounter = 0f;
+
+        spawnTimeCounter = 0f;
+
     }
 }

@@ -24,7 +24,7 @@ public class ExpPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (movingToPlayer == true)
+        if (movingToPlayer)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         }

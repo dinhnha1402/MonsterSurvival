@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
 
     public Slider expLevelSlider;
     public TMP_Text expLevelText;
+
     // Start is called before the first frame update
     void Start()
     {

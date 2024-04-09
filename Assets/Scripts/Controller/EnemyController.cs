@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
 
     private float distanceToPlayer = 0f;
 
-    // Enemies health
+
     public Slider healthSlider;
 
     public float health = 5f;

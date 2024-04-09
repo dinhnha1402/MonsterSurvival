@@ -137,6 +137,7 @@ MonoBehaviour:
   maxHealth: 0
   bloodEffect: {fileID: 8105004165932937013}
   knockbackTime: 0.3
+  expDrop: 1
 --- !u!95 &2288397310152386726
 Animator:
   serializedVersion: 5
@@ -5424,7 +5425,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 2241711825848966265}
   m_HandleRect: {fileID: 0}

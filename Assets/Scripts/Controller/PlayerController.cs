@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     public float moveSpeed;
     public Animator anim;
     public SpriteRenderer spriteRenderer;
@@ -12,6 +14,13 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveDir;
 
     public float pickupRange = 1.5f;
+
+    public Weapon activeWeapon;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
