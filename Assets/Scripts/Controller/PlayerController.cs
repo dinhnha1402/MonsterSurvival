@@ -15,7 +15,9 @@ public class PlayerController : MonoBehaviour
 
     public float pickupRange = 1.5f;
 
-    public Weapon activeWeapon;
+    public List<Weapon> unassignedWeapons, assignedWeapons;
+
+    public int maxWeapon = 3;
 
     private void Awake()
     {
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        AddWeapon(Random.Range(0, unassignedWeapons.Count));
     }
     // Update is called once per frame
 
@@ -67,5 +69,26 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+    }
+
+    public void AddWeapon(int weaponNumber)
+    {
+        if(weaponNumber < unassignedWeapons.Count)
+        {
+            assignedWeapons.Add(unassignedWeapons[weaponNumber]);
+
+            unassignedWeapons[weaponNumber].gameObject.SetActive(true);
+
+            unassignedWeapons.RemoveAt(weaponNumber);
+        }
+
+    }
+    public void AddWeapon(Weapon weaponToAdd)
+    {
+        weaponToAdd.gameObject.SetActive(true);
+
+        assignedWeapons.Add(weaponToAdd);
+
+        unassignedWeapons.Remove(weaponToAdd);
     }
 }

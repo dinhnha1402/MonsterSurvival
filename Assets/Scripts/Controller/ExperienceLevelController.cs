@@ -7,6 +7,11 @@ public class ExperienceLevelController : MonoBehaviour
 {
     public static ExperienceLevelController Instance;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public int currentExp;
 
     public ExpPickup pickup;
@@ -14,10 +19,7 @@ public class ExperienceLevelController : MonoBehaviour
     public List<int> expLevels;
     public int currentLevel = 1, levelCount = 50;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
+    public List<Weapon> weaponsToUpgrade;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +68,9 @@ public class ExperienceLevelController : MonoBehaviour
 
         UIController.Instance.levelUpPanel.SetActive(true);
 
-        UIController.Instance.upgradeButtons[1].UpdateButtonDisplay(PlayerController.instance.activeWeapon);
-       
+        weaponsToUpgrade.Clear();
+
+        List<Weapon> availableWeapons = new List<Weapon>();
     }
+
 }

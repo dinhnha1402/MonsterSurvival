@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7017133265967252943
 Transform:
   m_ObjectHideFlags: 0
@@ -45,6 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a7b53cc7544da40bdae64a67695d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: []
+  weaponLevel: 0
+  statsUpdated: 0
+  icon: {fileID: 0}
   holder: {fileID: 2135284646338195249}
   weaponToSpawn: {fileID: 6914765181354966627}
   rotateSpeed: 180
@@ -4969,7 +4973,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1646509361
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7f6d0bd0c1558864b9ea9289b599f015, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

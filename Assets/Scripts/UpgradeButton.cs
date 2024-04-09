@@ -14,10 +14,22 @@ public class UpgradeButton : MonoBehaviour
 
     public void UpdateButtonDisplay(Weapon theWeapon)
     {
-        upgradeDescText.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText;
-        weaponIcon.sprite = theWeapon.icon;
+        if (theWeapon.gameObject.activeSelf == true)
+        {
+            upgradeDescText.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText;
 
-        nameLevelText.text = theWeapon.name + " Level " + theWeapon.weaponLevel;
+            weaponIcon.sprite = theWeapon.icon;
+
+            nameLevelText.text = theWeapon.name + " Level " + theWeapon.weaponLevel;
+        } 
+        else
+        {
+            upgradeDescText.text = "Unlock" + theWeapon.name;
+
+            weaponIcon.sprite = theWeapon.icon;
+
+            nameLevelText.text = theWeapon.name;
+        }
 
         assignedWeapon = theWeapon;
     }
@@ -26,7 +38,15 @@ public class UpgradeButton : MonoBehaviour
     {
         if (assignedWeapon != null)
         {
-            assignedWeapon.LevelUp();
+            if (assignedWeapon.gameObject.activeSelf)
+            {
+                assignedWeapon.LevelUp();
+            }
+            else
+            {
+                PlayerController.instance.AddWeapon(assignedWeapon);
+            }
+
 
             UIController.Instance.levelUpPanel.SetActive(false);
 
