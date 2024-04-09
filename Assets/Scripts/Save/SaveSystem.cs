@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,13 +14,24 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.SetString("Highscore", highscore);
     }
 
-    public void GetUsername()
+    public string GetUsername()
     {
-        PlayerPrefs.GetString("Username");
+        return PlayerPrefs.GetString("Username");
     }
 
     public void GetHighscore()
     {
         PlayerPrefs.GetString("Highscore");
+    }
+    public void SaveGame(string jsonGameSaveData)
+    {
+        PlayerPrefs.SetString("SaveGameInfo", jsonGameSaveData);
+        PlayerPrefs.Save(); // Đảm bảo rằng dữ liệu được lưu ngay lập tức
+    }
+
+    // Lấy chuỗi JSON từ PlayerPrefs
+    public string GetSavedGame()
+    {
+        return PlayerPrefs.GetString("SaveGameInfo", "{}");
     }
 }

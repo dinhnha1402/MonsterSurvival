@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static MongoDBConnector;
 
 public class LoginHandler : MonoBehaviour
 {
@@ -31,6 +32,18 @@ public class LoginHandler : MonoBehaviour
 
     public void OnNewGameButtonClicked()
     {
+        SaveSystem saveSystem = new SaveSystem();
+
+        string username = saveSystem.GetUsername();
+
+        GameSaveData data = new GameSaveData { username = username, score = 0, level = 1, waves = 0 };
+
+        string jsonGameSaveData = JsonUtility.ToJson(data);
+
+        saveSystem.SaveGame(jsonGameSaveData);
+
+        mongoController.SaveGameInfo(data);
+
         SceneManager.LoadScene("Main");
     }
 

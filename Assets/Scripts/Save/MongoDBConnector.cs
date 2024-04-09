@@ -22,6 +22,16 @@ public class MongoDBConnector : MonoBehaviour
     [SerializeField] private GameObject loadSaveMenu;
     [SerializeField] private GameObject loginMenu;
 
+    [Serializable]
+    public class GameSaveData
+    {
+        public string username;
+        public int score;
+        public int level;
+        public int waves;
+    }
+
+
     void Start()
     {
         ConnectToMongoDB();
@@ -210,4 +220,48 @@ public class MongoDBConnector : MonoBehaviour
         loadSaveMenu.SetActive(true);
         loginMenu.SetActive(false);
     }
+
+    public async void SaveGameInfo(GameSaveData gameSaveData)
+    {
+        var collection = database.GetCollection<BsonDocument>("UserSaveInfo");
+
+        try
+        {
+            // Tạo filter để kiểm tra tên người dùng
+            var filter = Builders<BsonDocument>.Filter.Eq("username", gameSaveData.username);
+
+            // Kiểm tra xem có thông tin người dùng trong DB hay không
+            var existingDocument = await collection.Find(filter).FirstOrDefaultAsync();
+
+            if (existingDocument != null)
+            {
+                // Nếu tên người dùng tồn tại, cập nhật thông tin mới
+                var update = Builders<BsonDocument>.Update.Set("score", gameSaveData.score)
+                                                          .Set("level", gameSaveData.level)
+                                                          .Set("waves", gameSaveData.waves);
+                await collection.UpdateOneAsync(filter, update);
+                Debug.Log("Game info updated successfully.");
+            }
+            else
+            {
+                // Nếu tên người dùng không tồn tại, thêm mới thông tin
+                var document = new BsonDocument
+            {
+                { "username", gameSaveData.username },
+                { "score", gameSaveData.score },
+                { "level", gameSaveData.level },
+                { "waves", gameSaveData.waves }
+            };
+                await collection.InsertOneAsync(document);
+                Debug.Log("Game info added successfully.");
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error accessing MongoDB: {e.Message}");
+        }
+    }
+
 }
+
+
