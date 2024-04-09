@@ -7,11 +7,14 @@ public class SaveSystem : MonoBehaviour
     public void SaveUsername(string username)
     {
         PlayerPrefs.SetString("Username", username);
+        PlayerPrefs.Save(); // Đảm bảo rằng dữ liệu được lưu ngay lập tức
     }
+
 
     public void SaveHighscore(string highscore)
     {
         PlayerPrefs.SetString("Highscore", highscore);
+        PlayerPrefs.Save();
     }
 
     public string GetUsername()

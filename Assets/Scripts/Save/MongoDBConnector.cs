@@ -16,7 +16,7 @@ public class MongoDBConnector : MonoBehaviour
 {
     private MongoDB.Driver.MongoClient client;
     private IMongoDatabase database;
-    private SaveSystem saveSystem;
+    public SaveSystem saveSystem;
     [SerializeField] private TMP_Text loginStatusText;
 
     [SerializeField] private GameObject loadSaveMenu;
@@ -104,7 +104,10 @@ public class MongoDBConnector : MonoBehaviour
                 loginStatusText.text = "Login successful!";
                 OpenLoadSaveGameMenu();
                 saveSystem.SaveUsername(username);
-                
+
+                string user = saveSystem.GetUsername();
+                Debug.Log(user);
+
             }
             else
             {
