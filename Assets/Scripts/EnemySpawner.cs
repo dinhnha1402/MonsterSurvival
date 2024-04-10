@@ -156,6 +156,12 @@ public class EnemySpawner : MonoBehaviour
         waveLengthCounter = waves[currentWave].waveLength;
 
         spawnTimeCounter = Random.Range(waves[currentWave].minTimeToSpawn, waves[currentWave].maxTimeToSpawn);
+
+        //save info
+        SaveLoadController.instance.saveInfo.enemyToSpawn = waves[currentWave].enemyToSpawn;
+        SaveLoadController.instance.saveInfo.waveLength = waves[currentWave].waveLength;
+        SaveLoadController.instance.saveInfo.minTimeToSpawn = waves[currentWave].minTimeToSpawn;
+        SaveLoadController.instance.saveInfo.maxTimeToSpawn = waves[currentWave].maxTimeToSpawn;
     }
 }
 

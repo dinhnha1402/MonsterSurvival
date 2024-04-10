@@ -40,12 +40,17 @@ public class ExperienceLevelController : MonoBehaviour
     {
         currentExp += expAmountToGet;
 
-        if(currentExp >= expLevels[currentLevel])
+        //save info
+        SaveLoadController.instance.saveInfo.currentExp += expAmountToGet;
+
+        if (currentExp >= expLevels[currentLevel])
         {
             LevelUp();
         }
 
         UIController.Instance.UpdateExperience(currentExp, expLevels[currentLevel], currentLevel);
+
+
     }
 
     public void SpawnExp(Vector3 position, int expValue)
@@ -64,13 +69,43 @@ public class ExperienceLevelController : MonoBehaviour
             currentLevel = expLevels.Count - 1;
         }
 
+        //save info
+        SaveLoadController.instance.saveInfo.currentLevel = currentLevel;
+
         Time.timeScale = 0f;
-
         UIController.Instance.levelUpPanel.SetActive(true);
-
+        
         weaponsToUpgrade.Clear();
-
         List<Weapon> availableWeapons = new List<Weapon>();
+
+        availableWeapons.AddRange(PlayerController.instance.assignedWeapons);
+        if(availableWeapons.Count > 0 )
+        {
+            int selected = Random.Range(0, availableWeapons.Count);
+
+            weaponsToUpgrade.Add(availableWeapons[selected]);
+
+            availableWeapons.RemoveAt(selected);
+        }
+
+        if(PlayerController.instance.assignedWeapons.Count < PlayerController.instance.maxWeapon)
+        {
+            availableWeapons.AddRange(PlayerController.instance.unassignedWeapons);
+        }
+        
+        for (int i = weaponsToUpgrade.Count; i < PlayerController.instance.maxWeapon; i++)
+        {
+            int selected = Random.Range(0, availableWeapons.Count);
+
+            weaponsToUpgrade.Add(availableWeapons[selected]);
+
+            availableWeapons.RemoveAt(selected);
+        }
+
+        for (int i = 0; i < weaponsToUpgrade.Count; i++)
+        {
+            UIController.Instance.upgradeButtons[i].UpdateButtonDisplay(weaponsToUpgrade[i]);
+        }
     }
 
 }

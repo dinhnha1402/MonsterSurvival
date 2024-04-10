@@ -6,15 +6,15 @@ public class DamageNumberController : MonoBehaviour
 {
     public static DamageNumberController instance;
 
-    public Transform damageCanvas;
-
-    public GameObject damageText;
-    private List<GameObject> damageTextPool = new List<GameObject>();
-
     private void Awake()
     {
         instance = this;
     }
+
+    public Transform damageCanvas;
+
+    public GameObject damageText;
+    private List<GameObject> damageTextPool = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()

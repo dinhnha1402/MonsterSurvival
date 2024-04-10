@@ -14,7 +14,7 @@ public class UpgradeButton : MonoBehaviour
 
     public void UpdateButtonDisplay(Weapon theWeapon)
     {
-        if (theWeapon.gameObject.activeSelf == true)
+        if (theWeapon.gameObject.activeSelf)
         {
             upgradeDescText.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText;
 

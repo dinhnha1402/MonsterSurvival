@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Save\UserAccount.cs" />
     <Compile Include="Assets\Scripts\Save\LoginHandler.cs" />
     <Compile Include="Assets\Scripts\Controller\ExperienceLevelController.cs" />
+    <Compile Include="Assets\Scripts\SaveLoadController.cs" />
     <Compile Include="Assets\Scripts\Save\Highscore.cs" />
     <Compile Include="Assets\Scripts\Controller\CameraController.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />

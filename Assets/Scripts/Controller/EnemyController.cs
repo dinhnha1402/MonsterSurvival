@@ -122,7 +122,6 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(float damageToTake)
     {
-
         bloodEffect.Play();
 
         if (!healthSlider.gameObject.activeSelf)
@@ -133,27 +132,25 @@ public class EnemyController : MonoBehaviour
 
         health -= damageToTake;
         healthSlider.value = health;
-
-
-
+       
         if (health <= 0f)
 
         {
             moveSpeed = 0f;
-
-            ExperienceLevelController.Instance.SpawnExp(transform.position, expDrop);
 
             StartCoroutine(AnimDeath());
         }
         else
         {
             StartCoroutine(AnimDamaged());
-        }
 
-        DamageNumberController.instance.SpawnDamage(damageToTake, transform.position);
+            DamageNumberController.instance.SpawnDamage(damageToTake, transform.position);
+
+        }
+        
     }
 
-    public void TakeDamage(float damageToTake, bool shouldKnockback)
+        public void TakeDamage(float damageToTake, bool shouldKnockback)
     {
         TakeDamage(damageToTake);
         if (shouldKnockback)
@@ -176,6 +173,8 @@ public class EnemyController : MonoBehaviour
         anim.SetBool("IsDeath", true);
 
         yield return new WaitForSeconds(1f);
+
+        ExperienceLevelController.Instance.SpawnExp(transform.position, expDrop);
 
         Destroy(gameObject);
     }
