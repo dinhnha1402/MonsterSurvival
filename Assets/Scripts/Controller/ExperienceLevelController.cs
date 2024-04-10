@@ -50,7 +50,6 @@ public class ExperienceLevelController : MonoBehaviour
 
         UIController.Instance.UpdateExperience(currentExp, expLevels[currentLevel], currentLevel);
 
-
     }
 
     public void SpawnExp(Vector3 position, int expValue)
@@ -79,6 +78,9 @@ public class ExperienceLevelController : MonoBehaviour
         List<Weapon> availableWeapons = new List<Weapon>();
 
         availableWeapons.AddRange(PlayerController.instance.assignedWeapons);
+
+
+
         if(availableWeapons.Count > 0 )
         {
             int selected = Random.Range(0, availableWeapons.Count);
@@ -88,23 +90,44 @@ public class ExperienceLevelController : MonoBehaviour
             availableWeapons.RemoveAt(selected);
         }
 
-        if(PlayerController.instance.assignedWeapons.Count < PlayerController.instance.maxWeapon)
+        if(PlayerController.instance.assignedWeapons.Count + PlayerController.instance.fullyUpgradedWeapons.Count < PlayerController.instance.maxWeapon)
         {
             availableWeapons.AddRange(PlayerController.instance.unassignedWeapons);
         }
+
+
         
         for (int i = weaponsToUpgrade.Count; i < PlayerController.instance.maxWeapon; i++)
         {
-            int selected = Random.Range(0, availableWeapons.Count);
+            if (availableWeapons.Count > 0)
+            {
+                int selected = Random.Range(0, availableWeapons.Count);
 
-            weaponsToUpgrade.Add(availableWeapons[selected]);
+                weaponsToUpgrade.Add(availableWeapons[selected]);
 
-            availableWeapons.RemoveAt(selected);
+                availableWeapons.RemoveAt(selected);
+            }
+            
         }
+
+
+
 
         for (int i = 0; i < weaponsToUpgrade.Count; i++)
         {
             UIController.Instance.upgradeButtons[i].UpdateButtonDisplay(weaponsToUpgrade[i]);
+        }
+
+        for(int i = 0; i < UIController.Instance.upgradeButtons.Length; i++)
+        {
+            if(i < weaponsToUpgrade.Count)
+            {
+                UIController.Instance.upgradeButtons[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                UIController.Instance.upgradeButtons[i].gameObject.SetActive(false);
+            }
         }
     }
 

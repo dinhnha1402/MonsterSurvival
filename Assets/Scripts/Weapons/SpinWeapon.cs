@@ -21,13 +21,13 @@ public class SpinWeapon : Weapon
 
     void Start()
     {
-        targetSizeFix = weaponToSpawn.transform.localScale;
+        targetSizeFix = weaponToSpawn.parent.localScale;
 
         SetStats();
 
         targetSize = targetSizeFix;
 
-        weaponToSpawn.localScale = Vector3.zero;
+        weaponToSpawn.parent.localScale = Vector3.zero;
 
         lifeTimeCounter = lifeTime;
 
@@ -40,7 +40,7 @@ public class SpinWeapon : Weapon
     {
         holder.rotation = Quaternion.Euler(0f, 0f, holder.rotation.eulerAngles.z + (rotateSpeed * Time.deltaTime));
 
-        weaponToSpawn.localScale = Vector3.MoveTowards(weaponToSpawn.localScale, targetSize, 8f * Time.deltaTime);
+        weaponToSpawn.parent.localScale = Vector3.MoveTowards(weaponToSpawn.parent.localScale, targetSize, Time.deltaTime);
 
         lifeTimeCounter -= Time.deltaTime;
 
@@ -48,19 +48,19 @@ public class SpinWeapon : Weapon
         {
             targetSize = Vector3.zero;
 
-            if(weaponToSpawn.localScale == Vector3.zero)
+            if(weaponToSpawn.parent.localScale == Vector3.zero)
             {
-                weaponToSpawn.gameObject.SetActive(false);
+                weaponToSpawn.parent.gameObject.SetActive(false);
             }
         }
 
-        if(!weaponToSpawn.gameObject.activeSelf)
+        if(!weaponToSpawn.parent.gameObject.activeSelf)
         {
             spawnTimeCounter -= Time.deltaTime;
 
             if (spawnTimeCounter <= 0)
             {
-                weaponToSpawn.gameObject.SetActive(true);
+                weaponToSpawn.parent.gameObject.SetActive(true);
 
                 targetSize = targetSizeFix;
 

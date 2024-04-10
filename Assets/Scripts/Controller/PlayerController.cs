@@ -6,11 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public float moveSpeed;
     public Animator anim;
     public SpriteRenderer spriteRenderer;
 
-    
+
     public Vector2 moveDir;
 
     public float pickupRange = 1.5f;
@@ -19,10 +24,8 @@ public class PlayerController : MonoBehaviour
 
     public int maxWeapon = 3;
 
-    private void Awake()
-    {
-        instance = this;
-    }
+    [HideInInspector]
+    public List<Weapon> fullyUpgradedWeapons = new List<Weapon>();
 
     // Start is called before the first frame update
     void Start()
