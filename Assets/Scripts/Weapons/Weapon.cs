@@ -35,7 +35,8 @@ public class Weapon : MonoBehaviour
 [System.Serializable]
 public class WeaponStats
 {
-    public float damage, range, speed, duration, attackSpeed, amount;
+    public float damage, range, speed, duration, attackSpeed;
+    public int amount;
     public string upgradeText;
 }
 

@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpinWeapon : Weapon
 {
     public Transform holder, weaponToSpawn;
-    private List<Transform> weaponsToSpawn;
+    public List<Transform> weaponsToSpawn;
 
     public float rotateSpeed;
 
@@ -22,10 +22,7 @@ public class SpinWeapon : Weapon
 
     void Start()
     {
-
-
-        //fixxxxxxxxxxxxx
-        //weaponToSpawn.
+        SetWeaponList();
 
         targetSizeFix = holder.localScale;
 
@@ -87,7 +84,7 @@ public class SpinWeapon : Weapon
 
     public void SetStats()
     {
-        weaponsToSpawn[Mathf.RoundToInt(stats[weaponLevel].amount - 1)].gameObject.SetActive(true);
+        weaponsToSpawn[stats[weaponLevel].amount - 1].gameObject.SetActive(true);
 
         for(int i = 0;i < stats[weaponLevel].amount; i++)
         {
@@ -110,5 +107,18 @@ public class SpinWeapon : Weapon
 
         spawnTimeCounter = 0f;
 
+    }
+
+    public void SetWeaponList()
+    {
+        weaponsToSpawn.Add(weaponToSpawn);
+
+        int maxAmount = stats[stats.Count - 1].amount;
+
+        for (int i = 1; i < maxAmount; i++)
+        {
+            Transform newWeaponToSpawn = Instantiate(weaponToSpawn.parent, holder.position, Quaternion.identity, holder);
+            weaponsToSpawn.Add(newWeaponToSpawn.GetChild(0));
+        }
     }
 }
