@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpinWeapon : Weapon
 {
     public Transform holder, weaponToSpawn;
+    private List<Transform> weaponsToSpawn;
 
     public float rotateSpeed;
 
@@ -21,13 +22,18 @@ public class SpinWeapon : Weapon
 
     void Start()
     {
-        targetSizeFix = weaponToSpawn.parent.localScale;
+
+
+        //fixxxxxxxxxxxxx
+        //weaponToSpawn.
+
+        targetSizeFix = holder.localScale;
 
         SetStats();
 
         targetSize = targetSizeFix;
 
-        weaponToSpawn.parent.localScale = Vector3.zero;
+        holder.localScale = Vector3.zero;
 
         lifeTimeCounter = lifeTime;
 
@@ -40,7 +46,7 @@ public class SpinWeapon : Weapon
     {
         holder.rotation = Quaternion.Euler(0f, 0f, holder.rotation.eulerAngles.z + (rotateSpeed * Time.deltaTime));
 
-        weaponToSpawn.parent.localScale = Vector3.MoveTowards(weaponToSpawn.parent.localScale, targetSize, Time.deltaTime);
+        holder.localScale = Vector3.MoveTowards(holder.localScale, targetSize, Time.deltaTime);
 
         lifeTimeCounter -= Time.deltaTime;
 
@@ -48,25 +54,26 @@ public class SpinWeapon : Weapon
         {
             targetSize = Vector3.zero;
 
-            if(weaponToSpawn.parent.localScale == Vector3.zero)
+            if(holder.localScale == Vector3.zero)
             {
-                weaponToSpawn.parent.gameObject.SetActive(false);
+                holder.gameObject.SetActive(false);
             }
         }
 
-        if(!weaponToSpawn.parent.gameObject.activeSelf)
+        if(!holder.gameObject.activeSelf)
         {
             spawnTimeCounter -= Time.deltaTime;
 
             if (spawnTimeCounter <= 0)
             {
-                weaponToSpawn.parent.gameObject.SetActive(true);
+                spawnTimeCounter = spawnTime;
+
+                holder.gameObject.SetActive(true);
 
                 targetSize = targetSizeFix;
 
                 lifeTimeCounter = lifeTime;
 
-                spawnTimeCounter = spawnTime;
             }
         }
 
@@ -80,7 +87,16 @@ public class SpinWeapon : Weapon
 
     public void SetStats()
     {
-        weaponToSpawn.GetComponent<Damager>().damageAmount = stats[weaponLevel].damage;
+        weaponsToSpawn[Mathf.RoundToInt(stats[weaponLevel].amount - 1)].gameObject.SetActive(true);
+
+        for(int i = 0;i < stats[weaponLevel].amount; i++)
+        {
+            float rotate = (360f / stats[weaponLevel].amount) * i;
+
+            weaponsToSpawn[i].parent.rotation = Quaternion.Euler(0f, 0f, rotate);
+
+            weaponsToSpawn[i].GetComponent<Damager>().damageAmount = stats[weaponLevel].damage;
+        }
 
         targetSizeFix = targetSizeFix * stats[weaponLevel].range;
 

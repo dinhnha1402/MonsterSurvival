@@ -5031,7 +5031,7 @@ GameObject:
   - component: {fileID: 7017133265967252943}
   - component: {fileID: 6949401982100660104}
   m_Layer: 0
-  m_Name: Frozen Shuriken
+  m_Name: Frozen Shuriken 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5105,7 +5105,6 @@ MonoBehaviour:
   statsUpdated: 0
   icon: {fileID: 21300000, guid: 7f6d0bd0c1558864b9ea9289b599f015, type: 3}
   holder: {fileID: 2135284646338195249}
-  weaponToSpawn: {fileID: 6914765181354966627}
   weaponsToSpawn:
   - {fileID: 6914765181354966627}
   - {fileID: 5042430453075556057}
@@ -9970,7 +9969,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6914765181354966627}
   m_Father: {fileID: 2135284646338195249}
@@ -15148,7 +15147,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4712479021926688598}
   - {fileID: 9203439848943046841}
