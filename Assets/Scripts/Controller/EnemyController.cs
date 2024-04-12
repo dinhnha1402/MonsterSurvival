@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     public float moveSpeed;
+    //private float moveSpeedFix;
 
     public float damage;
 
@@ -37,6 +38,8 @@ public class EnemyController : MonoBehaviour
     private float knockbackTimeCounter;
 
     public int expDrop = 1;
+
+    public bool isRange = false;
 
     void Start()
     {
@@ -70,11 +73,21 @@ public class EnemyController : MonoBehaviour
                 }
             }
 
-            //enemy follow player
-            theRb.velocity = (target.transform.position - transform.position).normalized * moveSpeed;
 
             //distance between player & enemy
             distanceToPlayer = Vector2.Distance(transform.position, target.transform.position);
+
+
+            //enemy follow player
+            if (isRange && distanceToPlayer <= attackRange)
+            {
+                theRb.velocity = (target.transform.position - transform.position).normalized * moveSpeed * 0.001f;
+            }
+            else
+            {
+                theRb.velocity = (target.transform.position - transform.position).normalized * moveSpeed;
+            }
+
 
 
             if (theRb.velocity.x > 0)
@@ -90,13 +103,11 @@ public class EnemyController : MonoBehaviour
             if (distanceToPlayer <= attackRange)
             {
                 anim.SetBool("IsClose", true);
-
             }
             else
             {
                 anim.SetBool("IsClose", false);
             }
-
 
             if (hitDelayTimeCounter > 0f)
             {
