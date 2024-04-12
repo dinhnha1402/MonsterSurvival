@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -57,6 +58,7 @@ public class SaveLoadController : MonoBehaviour
             maxTimeToSpawn = instance.saveInfo.maxTimeToSpawn,
             enemyToSpawn = instance.saveInfo.enemyToSpawn,
             assignedWeapons = instance.saveInfo.assignedWeapons,
+            saveDateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")
         };
         // Serialize to JSON
         string jsonGameSaveData = JsonUtility.ToJson(data, true);  // Sử dụng `true` để định dạng JSON cho dễ đọc
@@ -81,5 +83,6 @@ public class SaveInfo
     public float minTimeToSpawn;
     public float maxTimeToSpawn;
     public List<Weapon> assignedWeapons;
+    public string saveDateTime;
 
 }

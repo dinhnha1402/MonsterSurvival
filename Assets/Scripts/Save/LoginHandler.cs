@@ -32,17 +32,17 @@ public class LoginHandler : MonoBehaviour
 
     public void OnNewGameButtonClicked()
     {
-        SaveSystem saveSystem = new SaveSystem();
+        //SaveSystem saveSystem = new SaveSystem();
 
-        string username = saveSystem.GetUsername();
+        //string username = saveSystem.GetUsername();
 
-        SaveInfo data = new SaveInfo { username = username};
+        //SaveInfo data = new SaveInfo { username = username};
 
-        string jsonGameSaveData = JsonUtility.ToJson(data);
+        //string jsonGameSaveData = JsonUtility.ToJson(data);
 
-        saveSystem.SaveGame(jsonGameSaveData);
+        //saveSystem.SaveGame(jsonGameSaveData);
 
-        mongoController.SaveGameInfo(data);
+        //mongoController.SaveGameInfo(data);
 
         SceneManager.LoadScene("Main");
     }

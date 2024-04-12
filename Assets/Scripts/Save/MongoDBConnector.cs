@@ -229,42 +229,33 @@ public class MongoDBConnector : MonoBehaviour
 
         try
         {
-            // Tạo filter để kiểm tra tên người dùng
-            var filter = Builders<BsonDocument>.Filter.Eq("username", gameSaveData.username);
+            // Tạo filter để kiểm tra thời gian lưu trùng
+            var filter = Builders<BsonDocument>.Filter.Eq("saveDateTime", gameSaveData.saveDateTime);
 
-            // Kiểm tra xem có thông tin người dùng trong DB hay không
+            // Kiểm tra xem đã có thông tin lưu tại thời điểm này chưa
             var existingDocument = await collection.Find(filter).FirstOrDefaultAsync();
 
-            if (existingDocument != null)
+            if (existingDocument == null)
             {
-                // Nếu tên người dùng tồn tại, cập nhật thông tin mới
-                var update = Builders<BsonDocument>.Update
-                    .Set("currentExp", gameSaveData.currentExp)
-                    .Set("currentLevel", gameSaveData.currentLevel)
-                    .Set("enemyToSpawn", SerializeGameObjectNames(gameSaveData.enemyToSpawn))
-                    .Set("waveLength", gameSaveData.waveLength)
-                    .Set("minTimeToSpawn", gameSaveData.minTimeToSpawn)
-                    .Set("maxTimeToSpawn", gameSaveData.maxTimeToSpawn)
-                    .Set("assignedWeapons", SerializeWeapons(gameSaveData.assignedWeapons));
-                await collection.UpdateOneAsync(filter, update);
-                Debug.Log("Game info updated successfully.");
+                // Nếu không có dữ liệu trùng thời gian lưu, thêm mới thông tin
+                var document = new BsonDocument
+            {
+                { "username", gameSaveData.username },
+                { "currentExp", gameSaveData.currentExp },
+                { "currentLevel", gameSaveData.currentLevel },
+                { "enemyToSpawn", SerializeGameObjectNames(gameSaveData.enemyToSpawn) },
+                { "waveLength", gameSaveData.waveLength },
+                { "minTimeToSpawn", gameSaveData.minTimeToSpawn },
+                { "maxTimeToSpawn", gameSaveData.maxTimeToSpawn },
+                { "assignedWeapons", SerializeWeapons(gameSaveData.assignedWeapons) },
+                { "saveDateTime", gameSaveData.saveDateTime }
+            };
+                await collection.InsertOneAsync(document);
+                Debug.Log("Game info added successfully.");
             }
             else
             {
-                // Nếu tên người dùng không tồn tại, thêm mới thông tin
-                var document = new BsonDocument
-                {
-                    { "username", gameSaveData.username },
-                    { "currentExp", gameSaveData.currentExp },
-                    { "currentLevel", gameSaveData.currentLevel },
-                    { "enemyToSpawn", SerializeGameObjectNames(gameSaveData.enemyToSpawn) },
-                    { "waveLength", gameSaveData.waveLength },
-                    { "minTimeToSpawn", gameSaveData.minTimeToSpawn },
-                    { "maxTimeToSpawn", gameSaveData.maxTimeToSpawn },
-                    { "assignedWeapons", SerializeWeapons(gameSaveData.assignedWeapons) }
-                };
-                await collection.InsertOneAsync(document);
-                Debug.Log("Game info added successfully.");
+                Debug.Log("Duplicate save time detected; no data added.");
             }
         }
         catch (Exception e)
