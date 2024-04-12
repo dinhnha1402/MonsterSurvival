@@ -129,57 +129,60 @@ public class EnemyController : MonoBehaviour
             healthSlider.gameObject.SetActive(true);
         }
 
-
         health -= damageToTake;
         healthSlider.value = health;
        
         if (health <= 0f)
-
         {
-            moveSpeed = 0f;
-
             StartCoroutine(AnimDeath());
         }
         else
         {
             StartCoroutine(AnimDamaged());
+        }
+
+        IEnumerator AnimDamaged()
+        {
+            anim.SetBool("IsAttacked", true);
 
             DamageNumberController.instance.SpawnDamage(damageToTake, transform.position);
 
+            yield return new WaitForSeconds(.2f);
+
+            anim.SetBool("IsAttacked", false);
         }
+
+        IEnumerator AnimDeath()
+        {
+            moveSpeed = 0f;
+
+            anim.SetBool("IsDeath", true);
+
+            if (damageToTake + health > 0)
+            {
+                DamageNumberController.instance.SpawnDamage(damageToTake + health, transform.position);
+            }
+
+            yield return new WaitForSeconds(1f);
+
+            ExperienceLevelController.Instance.SpawnExp(transform.position, expDrop);
+
+            Destroy(gameObject);
+        }
+
         
     }
 
-        public void TakeDamage(float damageToTake, bool shouldKnockback)
+    public void TakeDamage(float damageToTake, bool shouldKnockback)
     {
         TakeDamage(damageToTake);
         if (shouldKnockback)
-        {
-            knockbackTimeCounter = knockbackTime;
-        }
+            {
+                knockbackTimeCounter = knockbackTime;
+            }
     }
 
-    IEnumerator AnimDamaged()
-    {
-        anim.SetBool("IsAttacked", true);
-
-        yield return new WaitForSeconds(.2f);
-
-        anim.SetBool("IsAttacked", false);
-    }
-
-    IEnumerator AnimDeath()
-    {
-        anim.SetBool("IsDeath", true);
-
-        yield return new WaitForSeconds(1f);
-
-        ExperienceLevelController.Instance.SpawnExp(transform.position, expDrop);
-
-        Destroy(gameObject);
-    }
-
-
+    
 }
 
 

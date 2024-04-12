@@ -6,6 +6,8 @@ using UnityEngine;
 public class SpinWeapon : Weapon
 {
     public Transform holder, weaponToSpawn;
+
+    [HideInInspector]
     public List<Transform> weaponsToSpawn;
 
     public float rotateSpeed;

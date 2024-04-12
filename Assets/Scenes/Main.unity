@@ -1966,43 +1966,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[1].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[1].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[2].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[2].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[3].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[3].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[4].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[4].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[5].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[5].speed
-      value: 1.1
+      value: 1.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
+      propertyPath: stats.Array.data[4].amount
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7017133265967252943, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2132,7 +2136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentExp: 0
   pickup: {fileID: 2344295115552445850, guid: 4421132436a11294f8d01f04ad613831, type: 3}
-  expLevels: 0000000002000000
+  expLevels: 0000000001000000
   currentLevel: 1
   levelCount: 50
   weaponsToUpgrade: []
@@ -3304,43 +3308,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[1].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[1].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[2].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[2].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[3].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[3].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[4].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[4].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[5].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[5].speed
-      value: 1.1
+      value: 1.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
+      propertyPath: stats.Array.data[4].amount
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7017133265967252943, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6071,43 +6079,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[1].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[1].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[2].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[2].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[3].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[3].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[4].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[4].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[5].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[5].speed
-      value: 1.1
+      value: 1.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
+      propertyPath: stats.Array.data[4].amount
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7017133265967252943, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8208,43 +8220,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[1].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[1].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[2].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[2].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[3].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[3].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[4].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[4].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[5].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[5].speed
-      value: 1.1
+      value: 1.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
+      propertyPath: stats.Array.data[4].amount
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7017133265967252943, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8533,44 +8549,52 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
+      propertyPath: rotateSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[1].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[1].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[2].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[2].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[3].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[3].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[4].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[4].speed
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[5].range
-      value: 1.1
+      value: 1.075
       objectReference: {fileID: 0}
     - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: stats.Array.data[5].speed
-      value: 1.1
+      value: 1.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
+      propertyPath: stats.Array.data[4].amount
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7017133265967252943, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: m_LocalPosition.x
