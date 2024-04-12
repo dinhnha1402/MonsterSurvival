@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SaveLoadController : MonoBehaviour
 {
     public static SaveLoadController instance;
+    [SerializeField] private MongoDBConnector mongoController;
 
     void Awake()
     {
@@ -39,10 +41,36 @@ public class SaveLoadController : MonoBehaviour
 
         // Note: Hãy thực hiện việc tải này dựa trên cách bạn lưu trữ dữ liệu trong PlayerPrefs.
     }
+    public void SaveToDB()
+    {
+        SaveSystem saveSystem = new SaveSystem();
+        string username = saveSystem.GetUsername();
+
+        // Tạo một đối tượng SaveInfo mới
+        SaveInfo data = new SaveInfo
+        {
+            username = username,
+            currentExp = instance.saveInfo.currentExp,
+            currentLevel = instance.saveInfo.currentLevel,
+            waveLength = instance.saveInfo.waveLength,
+            minTimeToSpawn = instance.saveInfo.minTimeToSpawn,
+            maxTimeToSpawn = instance.saveInfo.maxTimeToSpawn,
+            enemyToSpawn = instance.saveInfo.enemyToSpawn,
+            assignedWeapons = instance.saveInfo.assignedWeapons,
+        };
+        // Serialize to JSON
+        string jsonGameSaveData = JsonUtility.ToJson(data, true);  // Sử dụng `true` để định dạng JSON cho dễ đọc
+
+        saveSystem.SaveGame(jsonGameSaveData);
+
+        // Giả sử mongoController đã được khởi tạo và có thể sử dụng
+        mongoController.SaveGameInfo(data);
+    }
 }
 
 
-[System.Serializable]
+
+    [System.Serializable]
 public class SaveInfo
 {
     public string username;
