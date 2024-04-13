@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,6 @@ public class EnemyController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     public float moveSpeed;
-    //private float moveSpeedFix;
 
     public float damage;
 
@@ -57,8 +57,10 @@ public class EnemyController : MonoBehaviour
 
         if (target != null)
         {
+            //distance between player & enemy
+            distanceToPlayer = Vector2.Distance(transform.position, target.transform.position);
 
-            if(knockbackTimeCounter > 0)
+            if (knockbackTimeCounter > 0)
             {
                 knockbackTimeCounter -= Time.deltaTime;
 
@@ -69,26 +71,22 @@ public class EnemyController : MonoBehaviour
                 
                 if (knockbackTimeCounter <= 0)
                 {
-                    moveSpeed = Mathf.Abs(moveSpeed * .5f);
+                    moveSpeed = Mathf.Abs(moveSpeed) * .5f;
                 }
             }
-
-
-            //distance between player & enemy
-            distanceToPlayer = Vector2.Distance(transform.position, target.transform.position);
 
 
             //enemy follow player
             if (isRange && distanceToPlayer <= attackRange)
             {
-                theRb.velocity = (target.transform.position - transform.position).normalized * moveSpeed * 0.001f;
+                theRb.velocity = (target.transform.position - transform.position).normalized * moveSpeed * .001f;
             }
             else
             {
                 theRb.velocity = (target.transform.position - transform.position).normalized * moveSpeed;
             }
 
-
+            
 
             if (theRb.velocity.x > 0)
             {
@@ -100,6 +98,8 @@ public class EnemyController : MonoBehaviour
                 spriteRenderer.flipX = false;
             }
 
+
+
             if (distanceToPlayer <= attackRange)
             {
                 anim.SetBool("IsClose", true);
@@ -108,6 +108,8 @@ public class EnemyController : MonoBehaviour
             {
                 anim.SetBool("IsClose", false);
             }
+
+
 
             if (hitDelayTimeCounter > 0f)
             {
@@ -120,6 +122,8 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player" && hitDelayTimeCounter <= 0f && health > 0f)
@@ -128,7 +132,6 @@ public class EnemyController : MonoBehaviour
 
             hitDelayTimeCounter = hitDelayTime;
         }
-
     }
 
     public void TakeDamage(float damageToTake)
@@ -172,16 +175,13 @@ public class EnemyController : MonoBehaviour
             if (damageToTake + health > 0)
             {
                 DamageNumberController.instance.SpawnDamage(damageToTake + health, transform.position);
+                ExperienceLevelController.Instance.SpawnExp(transform.position, expDrop);
             }
 
             yield return new WaitForSeconds(1f);
 
-            ExperienceLevelController.Instance.SpawnExp(transform.position, expDrop);
-
             Destroy(gameObject);
         }
-
-        
     }
 
     public void TakeDamage(float damageToTake, bool shouldKnockback)
@@ -192,8 +192,6 @@ public class EnemyController : MonoBehaviour
                 knockbackTimeCounter = knockbackTime;
             }
     }
-
-    
 }
 
 

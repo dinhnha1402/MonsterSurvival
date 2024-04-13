@@ -138,6 +138,7 @@ MonoBehaviour:
   bloodEffect: {fileID: 8105004165932937013}
   knockbackTime: 0.3
   expDrop: 1
+  isRange: 0
 --- !u!95 &2288397310152386726
 Animator:
   serializedVersion: 5
@@ -171,7 +172,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.38484508
+  m_Mass: 0.72375405
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -218,9 +219,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.05665669}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.47997716
 --- !u!1 &1804383411230414013
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 1804383411230414013}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.028, y: 0.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -377,7 +378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.22}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7213844142158871717
@@ -5383,7 +5384,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 130}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8668755831278361022
