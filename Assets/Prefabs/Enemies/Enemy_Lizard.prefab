@@ -129,7 +129,7 @@ MonoBehaviour:
   anim: {fileID: 2288397310152386726}
   spriteRenderer: {fileID: 2671805212460489292}
   moveSpeed: 3.5
-  damage: 2
+  damage: 1
   attackRange: 3
   hitDelayTime: 1
   healthSlider: {fileID: 8668755831278361022}

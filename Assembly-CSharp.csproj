@@ -91,6 +91,7 @@
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
     <Compile Include="Assets\Scripts\Controller\DamageNumberController.cs" />
     <Compile Include="Assets\Scripts\Weapons\SpinWeapon.cs" />
+    <Compile Include="Assets\Scripts\Weapons\ZoneWeapon.cs" />
     <Compile Include="Assets\Scripts\Save\MainThreadDispatcher.cs" />
   </ItemGroup>
   <ItemGroup>

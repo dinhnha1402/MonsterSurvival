@@ -287,7 +287,7 @@ MonoBehaviour:
   theRb: {fileID: 823239514051618586}
   anim: {fileID: 9054504067611348016}
   spriteRenderer: {fileID: 7154679441141739896}
-  moveSpeed: 2.5
+  moveSpeed: 3
   damage: 5
   attackRange: 2
   hitDelayTime: 1

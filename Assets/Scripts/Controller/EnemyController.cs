@@ -184,10 +184,10 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damageToTake, bool shouldKnockback)
+    public void TakeDamage(float damageToTake, bool isKnockback)
     {
         TakeDamage(damageToTake);
-        if (shouldKnockback)
+        if (isKnockback)
             {
                 knockbackTimeCounter = knockbackTime;
             }
