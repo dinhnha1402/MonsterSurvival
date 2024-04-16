@@ -13,6 +13,8 @@ public class Damager : MonoBehaviour
 
     public bool isDamageOvertime;
 
+    public bool isDestroyOnImpact;
+
     public float hitDelayTime = 1f;
     private float hitDelayTimeCounter;
 
@@ -55,6 +57,11 @@ public class Damager : MonoBehaviour
         if (collision.tag == "Enemy" && !isDamageOvertime)
         {
             collision.GetComponent<EnemyController>().TakeDamage(damageAmount, isKnockback);
+
+            if(isDestroyOnImpact)
+            {
+                Destroy(gameObject);
+            }
         }
         else if (collision.tag == "Enemy" && isDamageOvertime)
         {

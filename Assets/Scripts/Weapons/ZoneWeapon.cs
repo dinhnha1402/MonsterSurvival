@@ -5,7 +5,7 @@ using UnityEngine.WSA;
 
 public class ZoneWeapon : Weapon
 {
-    public Transform weaponToSpawn, weaponEffect;
+    public Transform weaponToSpawn;
 
     public float lifeTime = 5f;
     private float lifeTimeCounter;
@@ -16,22 +16,15 @@ public class ZoneWeapon : Weapon
     private Vector3 targetSize;
     private Vector3 targetSizeFix;
 
-    private Vector3 effectSize;
-    private Vector3 effectSizeFix;
-
-
     void Start()
     {
         targetSizeFix = weaponToSpawn.localScale;
-        effectSizeFix = weaponEffect.localScale;
 
         SetStats();
 
         targetSize = targetSizeFix;
-        effectSize = effectSizeFix;
 
         weaponToSpawn.localScale = Vector3.zero;
-        weaponEffect.localScale = Vector3.zero;
 
         lifeTimeCounter = lifeTime;
 
@@ -41,14 +34,12 @@ public class ZoneWeapon : Weapon
     private void Update()
     {
         weaponToSpawn.localScale = Vector3.MoveTowards(weaponToSpawn.localScale, targetSize, Time.deltaTime * 2f);
-        weaponEffect.localScale = Vector3.MoveTowards(weaponEffect.localScale, effectSize, Time.deltaTime * 10f);
 
         lifeTimeCounter -= Time.deltaTime;
 
         if (lifeTimeCounter <= 0)
         {
             targetSize = Vector3.zero;
-            effectSize = Vector3.zero;
 
             if (weaponToSpawn.localScale == Vector3.zero)
             {
@@ -67,8 +58,6 @@ public class ZoneWeapon : Weapon
                 weaponToSpawn.gameObject.SetActive(true);
 
                 targetSize = targetSizeFix;
-                effectSize = effectSizeFix;
-
 
                 lifeTimeCounter = lifeTime;
 
@@ -88,7 +77,6 @@ public class ZoneWeapon : Weapon
         weaponToSpawn.GetComponent<Damager>().damageAmount = stats[weaponLevel].damage;
 
         targetSizeFix = targetSizeFix * stats[weaponLevel].range;
-        effectSizeFix = effectSizeFix * stats[weaponLevel].range;
 
         weaponToSpawn.GetComponent<Damager>().hitDelayTime = stats[weaponLevel].speed;
 
