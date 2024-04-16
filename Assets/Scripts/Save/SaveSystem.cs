@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
 {
+    public bool SelectedLoadGame = false;
+
     public void SaveUsername(string username)
     {
         PlayerPrefs.SetString("Username", username);
@@ -30,6 +32,7 @@ public class SaveSystem : MonoBehaviour
     {
         PlayerPrefs.SetString("SaveGameInfo", jsonGameSaveData);
         PlayerPrefs.Save(); // Đảm bảo rằng dữ liệu được lưu ngay lập tức
+        SelectedLoadGame = true;
     }
 
     // Lấy chuỗi JSON từ PlayerPrefs

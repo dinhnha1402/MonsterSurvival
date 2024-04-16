@@ -31,6 +31,8 @@ public class SaveLoadController : MonoBehaviour
         string savedData = PlayerPrefs.GetString("SaveGameInfo", "{}");
         saveInfo = JsonUtility.FromJson<SaveInfo>(savedData);
 
+        Debug.Log(saveInfo.currentLevel);
+
         // Đối với enemyToSpawn và assignedWeapons, bạn cần phải xử lý chúng riêng.
         // Ví dụ, nếu bạn lưu trữ tên prefab của enemyToSpawn và tên weapon trong PlayerPrefs,
         // bạn sẽ cần phải tìm hoặc load chúng dựa trên tên đó.
@@ -58,7 +60,7 @@ public class SaveLoadController : MonoBehaviour
             maxTimeToSpawn = instance.saveInfo.maxTimeToSpawn,
             enemyToSpawn = instance.saveInfo.enemyToSpawn,
             assignedWeapons = instance.saveInfo.assignedWeapons,
-            saveDateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")
+            saveDateTime = DateTime.Now.ToString("HH:mm:ss dd-MM-yyyy")
         };
         // Serialize to JSON
         string jsonGameSaveData = JsonUtility.ToJson(data, true);  // Sử dụng `true` để định dạng JSON cho dễ đọc

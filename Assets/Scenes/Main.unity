@@ -867,7 +867,9 @@ MonoBehaviour:
     waveLength: 0
     minTimeToSpawn: 0
     maxTimeToSpawn: 0
-    assignedWeapons: []
+    assignedWeapons:
+    - {fileID: 0}
+    saveDateTime: 
 --- !u!4 &151125717
 Transform:
   m_ObjectHideFlags: 0
@@ -8531,6 +8533,8 @@ MonoBehaviour:
   loginStatusText: {fileID: 0}
   loadSaveMenu: {fileID: 0}
   loginMenu: {fileID: 0}
+  userPrefab: {fileID: 0}
+  container: {fileID: 0}
 --- !u!4 &1675635588
 Transform:
   m_ObjectHideFlags: 0

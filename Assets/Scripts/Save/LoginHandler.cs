@@ -10,6 +10,8 @@ public class LoginHandler : MonoBehaviour
     [SerializeField] private TMP_InputField usernameInputField;
     [SerializeField] private TMP_InputField passwordInputField;
     [SerializeField] private MongoDBConnector mongoController;
+    [SerializeField] private SaveSystem saveSystem;
+
 
     public void OnLoginButtonClicked()
     {
@@ -17,6 +19,8 @@ public class LoginHandler : MonoBehaviour
         string password = passwordInputField.text;
 
         mongoController.CheckLogin(username, password);
+
+
         //MongoController.AddOrUpdateUserScore(username, 100);
 
     }
@@ -36,7 +40,7 @@ public class LoginHandler : MonoBehaviour
 
         //string username = saveSystem.GetUsername();
 
-        //SaveInfo data = new SaveInfo { username = username};
+        //SaveInfo data = new SaveInfo { username = username };
 
         //string jsonGameSaveData = JsonUtility.ToJson(data);
 
@@ -45,6 +49,15 @@ public class LoginHandler : MonoBehaviour
         //mongoController.SaveGameInfo(data);
 
         SceneManager.LoadScene("Main");
+    }
+
+    public void OnLoadGameButtonClick()
+    {
+        //if(saveSystem.SelectedLoadGame == true)
+        //{
+        //}
+        SceneManager.LoadScene("Main");
+
     }
 
     public void QuitGame()

@@ -11,6 +11,9 @@ using Amazon.Runtime.Documents;
 using TMPro;
 using Assets.Scripts.Save;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
+using UnityEditor.UI;
 
 public class MongoDBConnector : MonoBehaviour
 {
@@ -22,14 +25,8 @@ public class MongoDBConnector : MonoBehaviour
     [SerializeField] private GameObject loadSaveMenu;
     [SerializeField] private GameObject loginMenu;
 
-    [Serializable]
-    public class GameSaveData
-    {
-        public string username;
-        public int score;
-        public int level;
-        public int waves;
-    }
+    [SerializeField] private GameObject userPrefab;  // Prefab for user entries
+    [SerializeField] private Transform container;
 
 
     void Start()
@@ -104,6 +101,7 @@ public class MongoDBConnector : MonoBehaviour
                 loginStatusText.text = "Login successful!";
                 OpenLoadSaveGameMenu();
                 saveSystem.SaveUsername(username);
+                CreatePrefabsForUser(username);
 
                 string user = saveSystem.GetUsername();
 
@@ -344,6 +342,97 @@ public class MongoDBConnector : MonoBehaviour
         }
         return names;
     }
+
+    async void CreatePrefabsForUser(string username)
+    {
+        var collection = database.GetCollection<BsonDocument>("UserSaveInfo");
+
+        var filter = Builders<BsonDocument>.Filter.Eq("username", username);
+
+        try
+        {
+            var documents = await collection.Find(filter).ToListAsync();
+
+            foreach (var document in documents)
+            {
+                GameObject newUserPrefab = Instantiate(userPrefab, container);
+                newUserPrefab.name = document["username"].AsString;
+
+                // Accessing TextMeshPro components by child GameObject names
+                var usernameText = newUserPrefab.transform.Find("UsernameText").GetComponent<TextMeshProUGUI>();
+                var dateTimeText = newUserPrefab.transform.Find("DateTimeText").GetComponent<TextMeshProUGUI>();
+
+                // Setting text values
+                usernameText.text = document["username"].AsString;
+                dateTimeText.text = document["saveDateTime"].AsString;
+
+                // Set the SaveInfo data on the prefab
+                var saveInfoComponent = newUserPrefab.GetComponent<SaveInfoComponent>();
+                var prefabController = newUserPrefab.GetComponent<SaveInfoComponent>();
+                document.Remove("_id");
+                saveInfoComponent.saveInfo = document.ToJson();
+                /*prefabController.Setup()*/;
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error accessing MongoDB: {e.Message}");
+        }
+    }
+
+    private List<Weapon> LoadWeapons(BsonArray weaponData)
+    {
+        List<Weapon> weapons = new List<Weapon>();
+        foreach (var item in weaponData)
+        {
+            Weapon weapon = new Weapon();
+            weapon.weaponLevel = item["weaponLevel"].AsInt32;
+            weapon.stats = new List<WeaponStats>();
+
+            foreach (var stat in item["stats"].AsBsonArray)
+            {
+                weapon.stats.Add(new WeaponStats
+                {
+                    damage = (float)stat["damage"].ToDouble(),
+                    range = (float)stat["range"].ToDouble(),
+                    speed = (float)stat["speed"].ToDouble(),
+                    duration = (float)stat["duration"].ToDouble(),
+                    attackSpeed = (float)stat["attackSpeed"].ToDouble(),
+                    amount = (float)stat["amount"].ToDouble(),
+                    upgradeText = stat["upgradeText"].AsString
+                });
+            }
+
+            weapons.Add(weapon);
+        }
+        return weapons;
+    }
+
+    //private GameObject[] LoadEnemyGameObjects(BsonArray enemyIds)
+    //{
+    //    GameObject[] enemies = new GameObject[enemyIds.Count];
+    //    for (int i = 0; i < enemyIds.Count; i++)
+    //    {
+    //        string enemyName = enemyIds[i].AsString;
+    //        enemies[i] = FindEnemyPrefabByName(enemyName);
+    //    }
+    //    return enemies;
+    //}
+
+    // Example utility method to find enemy prefab by name
+    //private GameObject FindEnemyPrefabByName(string name)
+    //{
+    //    // Assuming all enemy prefabs are loaded and stored in a dictionary for quick lookup
+    //    if (enemyPrefabDictionary.TryGetValue(name, out GameObject prefab))
+    //    {
+    //        return prefab;
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("Prefab not found for enemy: " + name);
+    //        return null;
+    //    }
+    //}
 
 }
 
