@@ -8,6 +8,7 @@ public class SaveLoadController : MonoBehaviour
 {
     public static SaveLoadController instance;
     [SerializeField] private MongoDBConnector mongoController;
+    [SerializeField] private GameObject[] allEnemyPrefabs;
 
     void Awake()
     {
@@ -26,10 +27,21 @@ public class SaveLoadController : MonoBehaviour
 
     public SaveInfo saveInfo;
 
+    [System.Serializable]
+    public class SaveInfoHelper
+    {
+        public string[] enemyToSpawn; // This will hold the names as strings.
+    }
+
     void LoadSavedGame()
     {
         string savedData = PlayerPrefs.GetString("SaveGameInfo", "{}");
+
+
+
         saveInfo = JsonUtility.FromJson<SaveInfo>(savedData);
+
+        LoadEnemiesAndAssignToSaveInfo(savedData);
 
         Debug.Log(saveInfo.currentLevel);
 
@@ -44,6 +56,44 @@ public class SaveLoadController : MonoBehaviour
 
         // Note: Hãy thực hiện việc tải này dựa trên cách bạn lưu trữ dữ liệu trong PlayerPrefs.
     }
+
+    public void LoadEnemiesAndAssignToSaveInfo(string savedData)
+    {
+        // Deserialize to helper to extract enemy names
+        SaveInfoHelper helper = JsonUtility.FromJson<SaveInfoHelper>(savedData);
+
+        if (helper != null && helper.enemyToSpawn != null)
+        {
+            // Prepare the array to hold matched GameObjects
+            GameObject[] matchedEnemies = new GameObject[helper.enemyToSpawn.Length];
+
+            for (int i = 0; i < helper.enemyToSpawn.Length; i++)
+            {
+                // Match each enemy name to a prefab
+                matchedEnemies[i] = FindEnemyPrefabByName(helper.enemyToSpawn[i]);
+            }
+
+            // Assuming saveInfo is already created and part of this component
+            saveInfo.enemyToSpawn = matchedEnemies; // Assign matched GameObjects to saveInfo
+        }
+        else
+        {
+            Debug.LogError("Failed to load or parse enemy data.");
+        }
+    }
+
+    private GameObject FindEnemyPrefabByName(string name)
+    {
+        // Example using a predefined list or dictionary
+        foreach (GameObject prefab in allEnemyPrefabs) // Assume allEnemyPrefabs is populated elsewhere
+        {
+            if (prefab.name == name)
+                return prefab;
+        }
+        Debug.LogError("Prefab not found for name: " + name);
+        return null;
+    }
+
     public void SaveToDB()
     {
         SaveSystem saveSystem = new SaveSystem();
@@ -74,7 +124,7 @@ public class SaveLoadController : MonoBehaviour
 
 
 
-    [System.Serializable]
+[System.Serializable]
 public class SaveInfo
 {
     public string username;

@@ -859,6 +859,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mongoController: {fileID: 1675635587}
+  allEnemyPrefabs:
+  - {fileID: 2005531053131157298, guid: 9dfea3f4a7aa91f46abf344c109b9226, type: 3}
+  - {fileID: 1099289098961432789, guid: 18edeccdfe4a4d146be6e96fecfae0a0, type: 3}
   saveInfo:
     username: 
     currentExp: 0
@@ -8517,6 +8520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9da6f54fd4ef9e46a0841f6c872ad29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectedLoadGame: 0
 --- !u!114 &1675635587
 MonoBehaviour:
   m_ObjectHideFlags: 0

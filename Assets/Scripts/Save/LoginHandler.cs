@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,8 +11,7 @@ public class LoginHandler : MonoBehaviour
     [SerializeField] private TMP_InputField usernameInputField;
     [SerializeField] private TMP_InputField passwordInputField;
     [SerializeField] private MongoDBConnector mongoController;
-    [SerializeField] private SaveSystem saveSystem;
-
+    [SerializeField] private Transform container;
 
     public void OnLoginButtonClicked()
     {
@@ -53,11 +53,25 @@ public class LoginHandler : MonoBehaviour
 
     public void OnLoadGameButtonClick()
     {
-        //if(saveSystem.SelectedLoadGame == true)
-        //{
-        //}
-        SceneManager.LoadScene("Main");
+        if (container == null)
+        {
+            Debug.LogError("Container not assigned in the Inspector on " + gameObject.name);
+            return;  // Exit the function if container is not assigned
+        }
+        // Iterate through each child transform in the container
+        foreach (Transform child in container)
+        {
+            // Attempt to get the SaveSystem component
+            SaveSystem saveSystem = child.GetComponent<SaveSystem>();
+            if (saveSystem != null && saveSystem.SelectedLoadGame)
+            {
+                // Load the scene if SelectedLoadGame is true
+                SceneManager.LoadScene("Main");
 
+                // Break the loop after finding the first selected game
+                break;
+            }
+        }
     }
 
     public void QuitGame()

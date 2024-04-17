@@ -405,18 +405,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2678524884859196389}
-        m_TargetAssemblyTypeName: LoginHandler, Assembly-CSharp
-        m_MethodName: OnLoadGameButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &8237622371738324955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,4 +448,4 @@ MonoBehaviour:
   usernameInputField: {fileID: 0}
   passwordInputField: {fileID: 0}
   mongoController: {fileID: 0}
-  saveSystem: {fileID: 8237622371738324955}
+  container: {fileID: 0}

@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\Weapons\SpinWeapon.cs" />
     <Compile Include="Assets\Scripts\Save\SaveInfoComponent.cs" />
     <Compile Include="Assets\Scripts\Save\MainThreadDispatcher.cs" />
+    <Compile Include="Assets\Scripts\Save\CheckLoadGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
