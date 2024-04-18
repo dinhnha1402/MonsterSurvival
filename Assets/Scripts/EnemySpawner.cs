@@ -23,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
 
     private float waveLengthCounter;
 
+    private SaveInfo saveInfo;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,11 @@ public class EnemySpawner : MonoBehaviour
 
         despawnDistance = Vector3.Distance(transform.position, maxSpawn.position) + 4;
 
-        currentWave = -1;
+        string savedData = PlayerPrefs.GetString("SaveGameInfo", "{}");
+
+        saveInfo = JsonUtility.FromJson<SaveInfo>(savedData);
+
+        currentWave = saveInfo.currentWave - 1;
 
         GoToNextWave();
     }
@@ -73,7 +78,7 @@ public class EnemySpawner : MonoBehaviour
 
             while (enemyToCheck < checkTarget)
             {
-                if(enemyToCheck < spawnedEnemies.Count)
+                if (enemyToCheck < spawnedEnemies.Count)
                 {
                     if (spawnedEnemies[enemyToCheck] != null)
                     {
@@ -104,7 +109,7 @@ public class EnemySpawner : MonoBehaviour
                     checkTarget = 0;
                 }
             }
-             
+
         }
     }
 
@@ -158,7 +163,8 @@ public class EnemySpawner : MonoBehaviour
         spawnTimeCounter = Random.Range(waves[currentWave].minTimeToSpawn, waves[currentWave].maxTimeToSpawn);
 
         //save info
-        SaveLoadController.instance.saveInfo.enemyToSpawn = waves[currentWave].enemyToSpawn;
+        SaveLoadController.instance.saveInfo.enemyToSpawn = waves[currentWave].enemyToSpawn; 
+        SaveLoadController.instance.saveInfo.currentWave = currentWave;
         SaveLoadController.instance.saveInfo.waveLength = waves[currentWave].waveLength;
         SaveLoadController.instance.saveInfo.minTimeToSpawn = waves[currentWave].minTimeToSpawn;
         SaveLoadController.instance.saveInfo.maxTimeToSpawn = waves[currentWave].maxTimeToSpawn;

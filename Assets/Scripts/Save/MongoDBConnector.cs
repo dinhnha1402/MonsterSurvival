@@ -242,6 +242,7 @@ public class MongoDBConnector : MonoBehaviour
                 { "currentExp", gameSaveData.currentExp },
                 { "currentLevel", gameSaveData.currentLevel },
                 { "enemyToSpawn", SerializeGameObjectNames(gameSaveData.enemyToSpawn) },
+                { "currentWave", gameSaveData.currentWave },
                 { "waveLength", gameSaveData.waveLength },
                 { "minTimeToSpawn", gameSaveData.minTimeToSpawn },
                 { "maxTimeToSpawn", gameSaveData.maxTimeToSpawn },

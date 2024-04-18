@@ -28,6 +28,7 @@ public class SaveFunction : MonoBehaviour
                     .Set("currentExp", gameSaveData.currentExp)
                     .Set("currentLevel", gameSaveData.currentLevel)
                     .Set("enemyToSpawn", SerializeGameObjectNames(gameSaveData.enemyToSpawn))
+                    .Set("currentWave", gameSaveData.currentWave)
                     .Set("waveLength", gameSaveData.waveLength)
                     .Set("minTimeToSpawn", gameSaveData.minTimeToSpawn)
                     .Set("maxTimeToSpawn", gameSaveData.maxTimeToSpawn)
@@ -44,6 +45,7 @@ public class SaveFunction : MonoBehaviour
                     { "currentExp", gameSaveData.currentExp },
                     { "currentLevel", gameSaveData.currentLevel },
                     { "enemyToSpawn", SerializeGameObjectNames(gameSaveData.enemyToSpawn) },
+                    { "currentWave", gameSaveData.currentWave },
                     { "waveLength", gameSaveData.waveLength },
                     { "minTimeToSpawn", gameSaveData.minTimeToSpawn },
                     { "maxTimeToSpawn", gameSaveData.maxTimeToSpawn },

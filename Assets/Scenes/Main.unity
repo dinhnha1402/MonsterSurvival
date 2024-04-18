@@ -860,8 +860,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mongoController: {fileID: 1675635587}
   allEnemyPrefabs:
-  - {fileID: 2005531053131157298, guid: 9dfea3f4a7aa91f46abf344c109b9226, type: 3}
   - {fileID: 1099289098961432789, guid: 18edeccdfe4a4d146be6e96fecfae0a0, type: 3}
+  - {fileID: 2005531053131157298, guid: 9dfea3f4a7aa91f46abf344c109b9226, type: 3}
   saveInfo:
     username: 
     currentExp: 0
@@ -871,6 +871,7 @@ MonoBehaviour:
     minTimeToSpawn: 0
     maxTimeToSpawn: 0
     assignedWeapons:
+    - {fileID: 0}
     - {fileID: 0}
     saveDateTime: 
 --- !u!4 &151125717

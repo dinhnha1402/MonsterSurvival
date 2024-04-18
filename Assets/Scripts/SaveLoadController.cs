@@ -37,8 +37,6 @@ public class SaveLoadController : MonoBehaviour
     {
         string savedData = PlayerPrefs.GetString("SaveGameInfo", "{}");
 
-
-
         saveInfo = JsonUtility.FromJson<SaveInfo>(savedData);
 
         LoadEnemiesAndAssignToSaveInfo(savedData);
@@ -105,6 +103,7 @@ public class SaveLoadController : MonoBehaviour
             username = username,
             currentExp = instance.saveInfo.currentExp,
             currentLevel = instance.saveInfo.currentLevel,
+            currentWave = instance.saveInfo.currentWave,
             waveLength = instance.saveInfo.waveLength,
             minTimeToSpawn = instance.saveInfo.minTimeToSpawn,
             maxTimeToSpawn = instance.saveInfo.maxTimeToSpawn,
@@ -131,6 +130,7 @@ public class SaveInfo
     public int currentExp;
     public int currentLevel = 1;
     public GameObject[] enemyToSpawn;
+    public int currentWave;
     public float waveLength;
     public float minTimeToSpawn;
     public float maxTimeToSpawn;
