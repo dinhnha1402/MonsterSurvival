@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using UnityEditor.UI;
+using System.Text.RegularExpressions;
 
 public class MongoDBConnector : MonoBehaviour
 {
@@ -263,60 +264,44 @@ public class MongoDBConnector : MonoBehaviour
         }
     }
 
-    public BsonDocument SerializeWeaponStat(WeaponStats stat)
+    public BsonArray SerializeWeapons(List<GameObject> gameObjects)
     {
-        return new BsonDocument
+        var namesAndLevels = new BsonArray();
+        if (gameObjects == null || gameObjects.Count == 0)
         {
-            {"damage", stat.damage},
-            {"range", stat.range},
-            {"speed", stat.speed},
-            {"duration", stat.duration},
-            {"attackSpeed", stat.attackSpeed},
-            {"amount", stat.amount},
-            {"upgradeText", stat.upgradeText}
-        };
-    }
-
-    public BsonArray SerializeWeapons(List<Weapon> weapons)
-    {
-        var serializedWeapons = new BsonArray();
-        if (weapons == null || weapons.Count == 0)
-        {
-            // Trả về mảng rỗng nếu không có giá trị
-            return serializedWeapons;
+            // Return an empty array if there are no GameObjects
+            return namesAndLevels;
         }
 
-        foreach (var weapon in weapons)
+        foreach (var gameObject in gameObjects)
         {
-            if (weapon != null)
+            if (gameObject != null)
             {
-                var stats = new BsonArray();
-                if (weapon.stats != null)
+                // Get the Weapon component and retrieve the weaponLevel
+                var weapon = gameObject.GetComponent<Weapon>();
+                if (weapon != null)
                 {
-                    foreach (var stat in weapon.stats)
-                    {
-                        stats.Add(SerializeWeaponStat(stat)); // Giả sử SerializeWeaponStat là phương thức đã được định nghĩa
-                    }
+                    //string cleanedName = Regex.Replace(gameObject.name, @" \(\d+\)| \d+", "");
+                    var nameAndLevel = new BsonDocument
+                {
+                    { "name", gameObject.name },
+                    { "weaponLevel", weapon.weaponLevel }
+                };
+                    namesAndLevels.Add(nameAndLevel);
                 }
                 else
                 {
-                    Debug.Log("Weapon stats are null, skipping stats serialization...");
+                    // Log if the Weapon component is missing
+                    Debug.Log("GameObject '" + gameObject.name + "' does not have a Weapon component, skipping...");
                 }
-
-                var weaponDoc = new BsonDocument
-            {
-                {"weaponLevel", weapon.weaponLevel},
-                {"stats", stats}
-            };
-                serializedWeapons.Add(weaponDoc);
             }
             else
             {
-                // Xử lý hoặc bỏ qua Weapon null
-                Debug.Log("Encountered a null Weapon, skipping...");
+                // Handle or skip null GameObject
+                Debug.Log("Encountered a null GameObject, skipping...");
             }
         }
-        return serializedWeapons;
+        return namesAndLevels;
     }
 
 

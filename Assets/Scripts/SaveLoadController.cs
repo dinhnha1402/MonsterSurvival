@@ -9,6 +9,8 @@ public class SaveLoadController : MonoBehaviour
     public static SaveLoadController instance;
     [SerializeField] private MongoDBConnector mongoController;
     [SerializeField] private GameObject[] allEnemyPrefabs;
+    [SerializeField] private GameObject[] allWeaponsPrefabs;
+
 
     void Awake()
     {
@@ -28,9 +30,18 @@ public class SaveLoadController : MonoBehaviour
     public SaveInfo saveInfo;
 
     [System.Serializable]
-    public class SaveInfoHelper
+    private class SaveInfoHelper
     {
         public string[] enemyToSpawn; // This will hold the names as strings.
+        public List<WeaponInfo> assignedWeapons; // List to hold weapon names and levels.
+
+    }
+
+    [System.Serializable]
+    public class WeaponInfo
+    {
+        public string name;
+        public int level;
     }
 
     void LoadSavedGame()
@@ -40,6 +51,8 @@ public class SaveLoadController : MonoBehaviour
         saveInfo = JsonUtility.FromJson<SaveInfo>(savedData);
 
         LoadEnemiesAndAssignToSaveInfo(savedData);
+
+        LoadAssignedWeaponsAndSetLevels(savedData);
 
         Debug.Log(saveInfo.currentLevel);
 
@@ -89,6 +102,49 @@ public class SaveLoadController : MonoBehaviour
                 return prefab;
         }
         Debug.LogError("Prefab not found for name: " + name);
+        return null;
+    }
+
+    public void LoadAssignedWeaponsAndSetLevels(string savedData)
+    {
+        // Deserialize to helper to extract weapon names and levels
+        SaveInfoHelper helper = JsonUtility.FromJson<SaveInfoHelper>(savedData);
+
+        if (helper != null && helper.assignedWeapons != null)
+        {
+            List<GameObject> matchedWeapons = new List<GameObject>();
+
+            foreach (var weaponInfo in helper.assignedWeapons)
+            {
+                GameObject weaponPrefab = FindWeaponPrefabByName(weaponInfo.name);
+                if (weaponPrefab != null)
+                {
+                    GameObject weaponInstance = Instantiate(weaponPrefab); // Assuming instantiation is needed
+                    Weapon weaponComponent = weaponInstance.GetComponent<Weapon>();
+                    if (weaponComponent != null)
+                    {
+                        weaponComponent.weaponLevel = weaponInfo.level;
+                    }
+                    matchedWeapons.Add(weaponInstance);
+                }
+            }
+
+            // Assign matched GameObjects to saveInfo
+            saveInfo.assignedWeapons = matchedWeapons;
+        }
+        else
+        {
+            Debug.LogError("Failed to load or parse weapon data.");
+        }
+    }
+    private GameObject FindWeaponPrefabByName(string name)
+    {
+        foreach (GameObject prefab in allWeaponsPrefabs)
+        {
+            if (prefab.name == name)
+                return prefab;
+        }
+        Debug.LogError("Weapon prefab not found for name: " + name);
         return null;
     }
 

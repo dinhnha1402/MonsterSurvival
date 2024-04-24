@@ -862,6 +862,9 @@ MonoBehaviour:
   allEnemyPrefabs:
   - {fileID: 1099289098961432789, guid: 18edeccdfe4a4d146be6e96fecfae0a0, type: 3}
   - {fileID: 2005531053131157298, guid: 9dfea3f4a7aa91f46abf344c109b9226, type: 3}
+  allWeaponsPrefabs:
+  - {fileID: 2663281209272559393, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
+  - {fileID: 6614193634877911663, guid: dcdc4099662281a49877c0fef7314ca8, type: 3}
   saveInfo:
     username: 
     currentExp: 0
