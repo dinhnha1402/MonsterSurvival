@@ -13,6 +13,14 @@ public class Weapon : MonoBehaviour
 
     public Sprite icon;
 
+    public void Start()
+    {
+        if (weaponLevel >= stats.Count - 1)
+        {
+            PlayerController.instance.fullyUpgradedWeapons.Add(this);
+            PlayerController.instance.assignedWeapons.Remove(this);
+        }
+    }
     public void LevelUp()
     {
         if (weaponLevel < stats.Count - 1)
@@ -21,12 +29,13 @@ public class Weapon : MonoBehaviour
 
             statsUpdated = true;
 
-            if(weaponLevel >= stats.Count - 1)
+            if (weaponLevel >= stats.Count - 1)
             {
                 PlayerController.instance.fullyUpgradedWeapons.Add(this);
                 PlayerController.instance.assignedWeapons.Remove(this);
             }
 
+            //save info
             SaveLoadController.instance.saveInfo.assignedWeapons.Find(obj => obj.name == this.gameObject.name).GetComponent<Weapon>().weaponLevel = weaponLevel;
 
         }

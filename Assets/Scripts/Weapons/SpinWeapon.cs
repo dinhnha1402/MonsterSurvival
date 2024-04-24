@@ -38,6 +38,12 @@ public class SpinWeapon : Weapon
 
         spawnTimeCounter = spawnTime;
 
+        if (weaponLevel >= stats.Count - 1)
+        {
+            PlayerController.instance.fullyUpgradedWeapons.Add(this);
+            PlayerController.instance.assignedWeapons.Remove(this);
+        }
+
     }
 
     // Update is called once per frame
@@ -84,10 +90,25 @@ public class SpinWeapon : Weapon
         }
     }
 
+
+    public void SetWeaponList()
+    {
+        weaponsToSpawn.Add(weaponToSpawn);
+
+        int maxAmount = stats[stats.Count - 1].amount;
+
+        
+
+        for (int i = 1; i < maxAmount; i++)
+        {
+            Transform newWeaponToSpawn = Instantiate(weaponToSpawn.parent, holder.position, Quaternion.identity, holder);
+            weaponsToSpawn.Add(newWeaponToSpawn.GetChild(0));
+        }
+    }
+
     public void SetStats()
     {
-        weaponsToSpawn[stats[weaponLevel].amount - 1].gameObject.SetActive(true);
-
+        
         for(int i = 0;i < stats[weaponLevel].amount; i++)
         {
             float rotate = (360f / stats[weaponLevel].amount) * i;
@@ -95,6 +116,9 @@ public class SpinWeapon : Weapon
             weaponsToSpawn[i].parent.rotation = Quaternion.Euler(0f, 0f, rotate);
 
             weaponsToSpawn[i].GetComponent<Damager>().damageAmount = stats[weaponLevel].damage;
+
+            weaponsToSpawn[i].gameObject.SetActive(true);
+
         }
 
         targetSizeFix = targetSizeFix * stats[weaponLevel].range;
@@ -109,18 +133,8 @@ public class SpinWeapon : Weapon
 
         spawnTimeCounter = 0f;
 
+
     }
 
-    public void SetWeaponList()
-    {
-        weaponsToSpawn.Add(weaponToSpawn);
-
-        int maxAmount = stats[stats.Count - 1].amount;
-
-        for (int i = 1; i < maxAmount; i++)
-        {
-            Transform newWeaponToSpawn = Instantiate(weaponToSpawn.parent, holder.position, Quaternion.identity, holder);
-            weaponsToSpawn.Add(newWeaponToSpawn.GetChild(0));
-        }
-    }
+    
 }

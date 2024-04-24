@@ -29,6 +29,13 @@ public class ZoneWeapon : Weapon
         lifeTimeCounter = lifeTime;
 
         spawnTimeCounter = spawnTime;
+
+        if (weaponLevel >= stats.Count - 1)
+        {
+            PlayerController.instance.fullyUpgradedWeapons.Add(this);
+            PlayerController.instance.assignedWeapons.Remove(this);
+        }
+
     }
 
     private void Update()
