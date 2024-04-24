@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
             unassignedWeapons[weaponNumber].gameObject.SetActive(true);
 
             //save info
-            SaveLoadController.instance.saveInfo.assignedWeapons.Add(unassignedWeapons[weaponNumber]);
+            SaveLoadController.instance.saveInfo.assignedWeapons.Add(unassignedWeapons[weaponNumber].gameObject);
 
             unassignedWeapons.RemoveAt(weaponNumber);
         }
@@ -97,6 +97,6 @@ public class PlayerController : MonoBehaviour
         unassignedWeapons.Remove(weaponToAdd);
 
         //save info
-        SaveLoadController.instance.saveInfo.assignedWeapons.Add(weaponToAdd);
+        SaveLoadController.instance.saveInfo.assignedWeapons.Add(weaponToAdd.gameObject);
     }
 }

@@ -399,7 +399,7 @@ public class MongoDBConnector : MonoBehaviour
                     speed = (float)stat["speed"].ToDouble(),
                     duration = (float)stat["duration"].ToDouble(),
                     attackSpeed = (float)stat["attackSpeed"].ToDouble(),
-                    amount = (float)stat["amount"].ToDouble(),
+                    amount = (int)stat["amount"].ToDouble(),
                     upgradeText = stat["upgradeText"].AsString
                 });
             }

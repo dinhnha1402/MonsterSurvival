@@ -26,7 +26,12 @@ public class Weapon : MonoBehaviour
                 PlayerController.instance.fullyUpgradedWeapons.Add(this);
                 PlayerController.instance.assignedWeapons.Remove(this);
             }
+
+            SaveLoadController.instance.saveInfo.assignedWeapons.Find(obj => obj.name == this.gameObject.name).GetComponent<Weapon>().weaponLevel = weaponLevel;
+
         }
+
+        
     }
 
 }

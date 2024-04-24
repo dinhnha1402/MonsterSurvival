@@ -74,6 +74,7 @@
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
     <Compile Include="Assets\Scripts\Map\ChunkTrigger.cs" />
     <Compile Include="Assets\Scripts\Pause\SettingsMenuManager.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveFunction.cs" />
     <Compile Include="Assets\Scripts\Save\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Save\UserAccount.cs" />
     <Compile Include="Assets\Scripts\Save\LoginHandler.cs" />
@@ -91,8 +92,10 @@
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
     <Compile Include="Assets\Scripts\Controller\DamageNumberController.cs" />
     <Compile Include="Assets\Scripts\Weapons\SpinWeapon.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveInfoComponent.cs" />
     <Compile Include="Assets\Scripts\Weapons\ZoneWeapon.cs" />
     <Compile Include="Assets\Scripts\Save\MainThreadDispatcher.cs" />
+    <Compile Include="Assets\Scripts\Save\CheckLoadGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

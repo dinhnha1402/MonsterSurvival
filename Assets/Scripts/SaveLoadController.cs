@@ -134,7 +134,7 @@ public class SaveInfo
     public float waveLength;
     public float minTimeToSpawn;
     public float maxTimeToSpawn;
-    public List<Weapon> assignedWeapons;
+    public List<GameObject> assignedWeapons;
     public string saveDateTime;
-
+   
 }

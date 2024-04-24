@@ -867,12 +867,11 @@ MonoBehaviour:
     currentExp: 0
     currentLevel: 1
     enemyToSpawn: []
+    currentWave: 0
     waveLength: 0
     minTimeToSpawn: 0
     maxTimeToSpawn: 0
-    assignedWeapons:
-    - {fileID: 0}
-    - {fileID: 0}
+    assignedWeapons: []
     saveDateTime: 
 --- !u!4 &151125717
 Transform:
