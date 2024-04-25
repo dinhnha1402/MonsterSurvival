@@ -54,7 +54,7 @@ public class SaveLoadController : MonoBehaviour
 
         LoadAssignedWeaponsAndSetLevels(savedData);
 
-        Debug.Log(saveInfo.currentLevel);
+        //Debug.Log(saveInfo.currentLevel);
 
         // Đối với enemyToSpawn và assignedWeapons, bạn cần phải xử lý chúng riêng.
         // Ví dụ, nếu bạn lưu trữ tên prefab của enemyToSpawn và tên weapon trong PlayerPrefs,

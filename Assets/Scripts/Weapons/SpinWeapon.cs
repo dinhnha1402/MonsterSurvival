@@ -38,12 +38,6 @@ public class SpinWeapon : Weapon
 
         spawnTimeCounter = spawnTime;
 
-        if (weaponLevel >= stats.Count - 1)
-        {
-            PlayerController.instance.fullyUpgradedWeapons.Add(this);
-            PlayerController.instance.assignedWeapons.Remove(this);
-        }
-
     }
 
     // Update is called once per frame

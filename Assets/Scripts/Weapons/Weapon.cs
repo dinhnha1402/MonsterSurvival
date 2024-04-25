@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour
 
     public Sprite icon;
 
-    public void Start()
+    public void Awake()
     {
         if (weaponLevel >= stats.Count - 1)
         {

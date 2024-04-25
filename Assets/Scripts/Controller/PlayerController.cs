@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //[System.Serializable]
-    //public class WeaponInfo
+    //private class WeaponInfo
     //{
     //    public string weaponName;
     //    public int weaponLevel;
@@ -112,7 +112,6 @@ public class PlayerController : MonoBehaviour
     //[System.Serializable]
     //private class SaveInfoHelper
     //{
-    //    public string[] enemyToSpawn; // This will hold the names as strings.
     //    public List<WeaponInfo> assignedWeapons; // List to hold weapon names and levels.
 
     //}
