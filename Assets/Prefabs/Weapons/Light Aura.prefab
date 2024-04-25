@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8327207087949826369
 Transform:
   m_ObjectHideFlags: 0
@@ -74,8 +74,8 @@ MonoBehaviour:
     attackSpeed: 1.4
     amount: 0
     upgradeText: Maximum
-  weaponLevel: 0
-  statsUpdated: 0
+  weaponLevel: 3
+  statsUpdated: 1
   icon: {fileID: 21300000, guid: 0c78c8dd7f0745146b5b5c4fad8288e4, type: 3}
   weaponToSpawn: {fileID: 7810455187132587268}
   lifeTime: 5
@@ -132,6 +132,7 @@ MonoBehaviour:
   damageAmount: 1
   isKnockback: 0
   isDamageOvertime: 1
+  isDestroyOnImpact: 0
   hitDelayTime: 0.5
 --- !u!212 &2145514584915608996
 SpriteRenderer:
