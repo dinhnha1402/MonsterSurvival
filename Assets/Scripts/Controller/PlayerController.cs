@@ -84,10 +84,10 @@ public class PlayerController : MonoBehaviour
 
             unassignedWeapons[weaponNumber].gameObject.SetActive(true);
 
+            unassignedWeapons.RemoveAt(weaponNumber);
+
             //save info
             SaveLoadController.instance.saveInfo.assignedWeapons.Add(unassignedWeapons[weaponNumber].gameObject);
-
-            unassignedWeapons.RemoveAt(weaponNumber);
         }
     }
     public void AddWeapon(Weapon weaponToAdd)
