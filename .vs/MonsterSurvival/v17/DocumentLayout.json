@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\controller\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|c:\\vu\\reposity\\unityproject\\monstersurvival\\assets\\scripts\\saveloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\saveloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|c:\\vu\\reposity\\unityproject\\monstersurvival\\assets\\scripts\\weapons\\zoneweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\zoneweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\weapons\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\weapons\\spinweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\spinweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\controller\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\weapons\\zoneweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\zoneweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\saveloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\saveloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\weapons\\spinweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\spinweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\save\\mongodbconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
@@ -150,19 +150,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "ZoneWeapon.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\ZoneWeapon.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Weapons\\ZoneWeapon.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\ZoneWeapon.cs",
               "RelativeToolTip": "Assets\\Scripts\\Weapons\\ZoneWeapon.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwB4AAAAlAAAA",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAowEoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T02:18:40.91Z"
+              "WhenOpened": "2024-04-25T02:18:40.91Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SpinWeapon.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\SpinWeapon.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Weapons\\SpinWeapon.cs",
@@ -186,20 +187,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Controller\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\PlayerController.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Controller\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Controller\\PlayerController.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAwwFsAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T10:39:50.969Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "SaveLoadController.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\SaveLoadController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SaveLoadController.cs",
@@ -207,20 +208,20 @@
               "RelativeToolTip": "Assets\\Scripts\\SaveLoadController.cs",
               "ViewState": "AQIAAEMAAAAAAAAAAAAlwJMAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T10:46:01.012Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T10:46:01.012Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Weapon.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\Weapon.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Weapons\\Weapon.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\Weapon.cs",
               "RelativeToolTip": "Assets\\Scripts\\Weapons\\Weapon.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAowCwAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T04:42:37.557Z"
+              "WhenOpened": "2024-04-09T04:42:37.557Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
