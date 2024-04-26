@@ -38,7 +38,7 @@ public class SaveLoadController : MonoBehaviour
     }
 
     [System.Serializable]
-    public class WeaponInfo
+    private class WeaponInfo
     {
         public string name;
         public int level;
@@ -119,13 +119,13 @@ public class SaveLoadController : MonoBehaviour
                 GameObject weaponPrefab = FindWeaponPrefabByName(weaponInfo.name);
                 if (weaponPrefab != null)
                 {
-                    GameObject weaponInstance = Instantiate(weaponPrefab); // Assuming instantiation is needed
-                    Weapon weaponComponent = weaponInstance.GetComponent<Weapon>();
+                    //GameObject weaponInstance = Instantiate(weaponPrefab); // Assuming instantiation is needed
+                    Weapon weaponComponent = weaponPrefab.GetComponent<Weapon>();
                     if (weaponComponent != null)
                     {
                         weaponComponent.weaponLevel = weaponInfo.level;
                     }
-                    matchedWeapons.Add(weaponInstance);
+                    matchedWeapons.Add(weaponPrefab);
                 }
             }
 
