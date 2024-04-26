@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
     private class WeaponInfo
     {
         public string name;
-        public int level;
+        public int weaponLevel;
     }
 
     [System.Serializable]
@@ -166,7 +166,7 @@ public class PlayerController : MonoBehaviour
                 Weapon weaponToAdd = FindWeaponPrefabByName(weaponInfo.name);
                 if (weaponToAdd != null)
                 {
-                    weaponToAdd.weaponLevel = weaponInfo.level;
+                    weaponToAdd.weaponLevel = weaponInfo.weaponLevel;
                     assignedWeapons.Add(weaponToAdd);
                     unassignedWeapons.Remove(weaponToAdd);
                     weaponToAdd.gameObject.SetActive(true);

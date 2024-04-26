@@ -1188,7 +1188,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1176738179}
+  - {fileID: 511509816}
   m_Father: {fileID: 631132831}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204076128
@@ -2347,7 +2349,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 631132831}
+    m_TransformParent: {fileID: 174142429}
     m_Modifications:
     - target: {fileID: 2663281209272559393, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
       propertyPath: m_Name
@@ -2407,6 +2409,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7017133265967252943, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
   m_PrefabInstance: {fileID: 511509815}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &511509817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
+  m_PrefabInstance: {fileID: 511509815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a7b53cc7544da40bdae64a67695d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &521714020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,8 +2989,8 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0}
   pickupRange: 1.5
   unassignedWeapons:
-  - {fileID: 6949401982100660104, guid: a5c849a4f07484644b98cb79624324c9, type: 3}
-  - {fileID: 2967565962092657029, guid: dcdc4099662281a49877c0fef7314ca8, type: 3}
+  - {fileID: 511509817}
+  - {fileID: 1176738180}
   assignedWeapons: []
   maxWeapon: 3
   fullyUpgradedWeapons: []
@@ -2997,8 +3010,6 @@ Transform:
   - {fileID: 117321156}
   - {fileID: 364503430}
   - {fileID: 174142429}
-  - {fileID: 1176738179}
-  - {fileID: 511509816}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &631132833
@@ -5478,8 +5489,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 631132831}
+    m_TransformParent: {fileID: 174142429}
     m_Modifications:
+    - target: {fileID: 2967565962092657029, guid: dcdc4099662281a49877c0fef7314ca8, type: 3}
+      propertyPath: weaponLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6614193634877911663, guid: dcdc4099662281a49877c0fef7314ca8, type: 3}
       propertyPath: m_Name
       value: Light Aura
@@ -5538,6 +5553,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8327207087949826369, guid: dcdc4099662281a49877c0fef7314ca8, type: 3}
   m_PrefabInstance: {fileID: 1176738178}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1176738180 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2967565962092657029, guid: dcdc4099662281a49877c0fef7314ca8, type: 3}
+  m_PrefabInstance: {fileID: 1176738178}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e360d6807a21b4a85233bbfa2d73dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1183009883
 GameObject:
   m_ObjectHideFlags: 0
