@@ -64,9 +64,11 @@
     <Compile Include="Assets\Scripts\Map\MapController.cs" />
     <Compile Include="Assets\Scripts\Save\UserScore.cs" />
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
+    <Compile Include="Assets\Scripts\Weapons\ProjectileWeapon.cs" />
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
     <Compile Include="Assets\Scripts\Weapons\Damager.cs" />
     <Compile Include="Assets\Scripts\Controller\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Projectile.cs" />
     <Compile Include="Assets\Scripts\Map\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Pause\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Controller\PlayerHealthController.cs" />

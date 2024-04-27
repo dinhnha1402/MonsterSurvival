@@ -11,14 +11,15 @@ public class Damager : MonoBehaviour
 
     public bool isKnockback;
 
-    public bool isDamageOvertime;
-
     public bool isDestroyOnImpact;
+
+    public bool isDamageOvertime;
 
     public float hitDelayTime = 1f;
     private float hitDelayTimeCounter;
 
     private List<EnemyController> enemiesInRange = new List<EnemyController>();
+
     void Start()
     {
         

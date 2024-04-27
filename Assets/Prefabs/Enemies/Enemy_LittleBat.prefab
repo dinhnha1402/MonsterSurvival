@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 2288397310152386726}
   - component: {fileID: 5767897865816251152}
   - component: {fileID: 3409842747800383037}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_LittleBat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
