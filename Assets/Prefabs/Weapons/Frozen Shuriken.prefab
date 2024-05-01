@@ -46,28 +46,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - damage: 5
+  - damage: 4
     range: 1
     speed: 1
     duration: 5
     attackSpeed: 2
     amount: 1
     upgradeText: Power +
-  - damage: 6
+  - damage: 5
     range: 1.1
     speed: 1.1
     duration: 6
     attackSpeed: 1.8
     amount: 2
     upgradeText: Power ++
-  - damage: 8
+  - damage: 6
     range: 1.1
     speed: 1.1
     duration: 7
     attackSpeed: 1.6
     amount: 3
     upgradeText: Power +++
-  - damage: 10
+  - damage: 7
     range: 1.1
     speed: 1.1
     duration: 8
@@ -4995,8 +4995,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 5
   isKnockback: 1
-  isDamageOvertime: 0
   isDestroyOnImpact: 0
+  isDamageOvertime: 0
   hitDelayTime: 1
 --- !u!212 &8967449362028711370
 SpriteRenderer:

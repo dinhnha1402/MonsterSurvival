@@ -32,7 +32,7 @@ public class ZoneWeapon : Weapon
 
     }
 
-    private void Update()
+    void Update()
     {
         weaponToSpawn.localScale = Vector3.MoveTowards(weaponToSpawn.localScale, targetSize, Time.deltaTime * 2f);
 

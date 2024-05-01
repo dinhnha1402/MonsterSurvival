@@ -34,34 +34,58 @@ public class ProjectileWeapon : Weapon
 
             Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, weaponRange, whatIsEnemy);
 
-            if(enemies.Length > 0)
+            if (enemies.Length > 0)
             {
-                for (int i = 0; i < stats[weaponLevel].amount; i++)
-                    
+                /*    for (int i = 0; i < stats[weaponLevel].amount; i++)
+
+                    {
+                        //calculate facing direction between enemies and player
+                        Vector3 targetPosition = enemies[Random.Range(0, enemies.Length)].transform.position;
+
+                        Vector3 direction = targetPosition - transform.position;
+
+                        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+
+                        //create projectile and set rotation of shot direction 
+                        shotWeapon.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+                        Instantiate(projectile, projectile.transform.position, Quaternion.AngleAxis(angle, Vector3.forward)).gameObject.SetActive(true);*/
+
+                StartCoroutine(AnimShot());
+
+                //}
+
+
+
+                IEnumerator AnimShot()
                 {
-                    //calculate facing direction between enemies and player
-                    Vector3 targetPosition = enemies[Random.Range(0, enemies.Length)].transform.position;
+                    for (int i = 0; i < stats[weaponLevel].amount; i++)
 
-                    Vector3 direction = targetPosition - transform.position;
+                    {
+                        //calculate facing direction between enemies and player
+                        Vector3 targetPosition = enemies[Random.Range(0, enemies.Length)].transform.position;
 
-                    float angle = Mathf.Atan2(direction.y, direction.x) *Mathf.Rad2Deg;
+                        Vector3 direction = targetPosition - transform.position;
 
-                    angle -= 90;
+                        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
 
-                    //set projectile angle
-                    projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                    
-                    shotWeapon.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                        //create projectile and set rotation of shot direction 
+                        shotWeapon.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-                    Instantiate(projectile, projectile.transform.position, projectile.transform.rotation).gameObject.SetActive(true);
+                        Instantiate(projectile, projectile.transform.position, Quaternion.AngleAxis(angle, Vector3.forward)).gameObject.SetActive(true);
+                        shotWeapon.GetComponent<Animator>().SetBool("IsShot", true);
 
-                    StartCoroutine(AnimShot());
+                        yield return new WaitForSeconds(.2f);
 
-                    
+                        shotWeapon.GetComponent<Animator>().SetBool("IsShot", false);
+                    }
                 }
-            }
-        }
 
+            }
+
+
+
+        }
 
         if (statsUpdated)
         {
@@ -70,8 +94,7 @@ public class ProjectileWeapon : Weapon
             SetStats();
         }
     }
-
-    void SetStats()
+    public void SetStats()
     {
         damager.damageAmount = stats[weaponLevel].damage;
 
@@ -87,14 +110,6 @@ public class ProjectileWeapon : Weapon
 
     }
 
-    IEnumerator AnimShot()
-    {
-        shotWeapon.GetComponent<Animator>().SetBool("IsShot", true);
 
-        yield return new WaitForSeconds(.1f);
-
-        shotWeapon.GetComponent<Animator>().SetBool("IsShot", false);
-    }
-
-
+    
 }

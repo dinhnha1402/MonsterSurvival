@@ -26,9 +26,9 @@ Transform:
   m_GameObject: {fileID: 262671921376301672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.29, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4574789228670891645}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7554259999699950636}
   - component: {fileID: 1327162337768956851}
   - component: {fileID: 2517818471041927652}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,8 +112,8 @@ Transform:
   m_GameObject: {fileID: 1051414331040909733}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.501, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 665413572851359835}
@@ -4977,7 +4977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7351096660087024794}
   - component: {fileID: 3561000612526730177}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Blood Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5014,32 +5014,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - damage: 4
+  - damage: 5
     range: 6
-    speed: 5
+    speed: 7
     duration: 0.7
-    attackSpeed: 1
+    attackSpeed: 1.45
     amount: 1
     upgradeText: Power +
-  - damage: 5
+  - damage: 6
     range: 6.5
-    speed: 5.5
+    speed: 7.5
     duration: 0.8
-    attackSpeed: 0.85
+    attackSpeed: 1.3
     amount: 2
     upgradeText: Power ++
-  - damage: 6
+  - damage: 7
     range: 7
-    speed: 6
+    speed: 8
     duration: 0.9
-    attackSpeed: 0.7
+    attackSpeed: 1.15
     amount: 2
     upgradeText: Power +++
-  - damage: 7
+  - damage: 8
     range: 7.5
-    speed: 6.5
+    speed: 8.5
     duration: 1
-    attackSpeed: 0.55
+    attackSpeed: 1
     amount: 3
     upgradeText: Maximum
   weaponLevel: 0
@@ -5078,7 +5078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5930955162606303127}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5119,7 +5119,7 @@ GameObject:
   - component: {fileID: 1673018502457200414}
   - component: {fileID: 3205416442051941673}
   - component: {fileID: 5235034449769759981}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5137,7 +5137,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 939165207937886823}
   m_Father: {fileID: 7351096660087024794}
@@ -5174,7 +5174,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.5}
+  m_Offset: {x: 0, y: 1.21}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5185,7 +5185,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.9}
+  m_Size: {x: 0.11, y: 0.56}
   m_EdgeRadius: 0
 --- !u!114 &3205416442051941673
 MonoBehaviour:
@@ -5216,5 +5216,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af66479127ed1d42b03e8004ef8e73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  lifeTime: 1.25
+  moveSpeed: 7
+  lifeTime: 0.7
