@@ -10,16 +10,21 @@ public class Projectile : MonoBehaviour
     public float lifeTime = 3f;
     private float lifeTimeCounter;
 
-    private void Start()
+    private Vector3 targetSize;
+
+    void Start()
     {
         lifeTimeCounter = lifeTime;
+
+        targetSize = transform.localScale * 2;
+
     }
     // Update is called once per frame
     void Update()
     {
+        transform.localScale = Vector3.MoveTowards(transform.localScale, targetSize, moveSpeed * Time.deltaTime);
+      
         transform.position += transform.up * moveSpeed * Time.deltaTime;
-
-        transform.localScale -= Vector3.zero * lifeTime * Time.deltaTime;
 
         lifeTimeCounter -= Time.deltaTime;
 
