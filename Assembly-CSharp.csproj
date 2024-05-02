@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Save\SaveFunction.cs" />
     <Compile Include="Assets\Scripts\Save\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Save\UserAccount.cs" />
+    <Compile Include="Assets\Scripts\ChangeInput.cs" />
     <Compile Include="Assets\Scripts\Save\LoginHandler.cs" />
     <Compile Include="Assets\Scripts\Controller\ExperienceLevelController.cs" />
     <Compile Include="Assets\Scripts\SaveLoadController.cs" />
