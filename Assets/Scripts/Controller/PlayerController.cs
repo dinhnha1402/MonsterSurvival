@@ -7,15 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
 
-    private void Awake()
-    {
-        instance = this;
-
-        //string savedData = PlayerPrefs.GetString("SaveGameInfo", "{}");
-
-        //LoadWeaponsFromSaveData(savedData);
-    }
-
     public float moveSpeed;
     public Animator anim;
     public SpriteRenderer spriteRenderer;
@@ -29,13 +20,53 @@ public class PlayerController : MonoBehaviour
 
     public int maxWeapon = 3;
 
+    [System.Serializable]
+    public class WeaponInfo
+    {
+        public string name;
+        public int weaponLevel;
+    }
+
+    [System.Serializable]
+    private class SaveInfoHelper
+    {
+        public string[] enemyToSpawn; // This will hold the names as strings.
+        public List<WeaponInfo> assignedWeapons; // List to hold weapon names and levels.
+
+    }
+
     [HideInInspector]
     public List<Weapon> fullyUpgradedWeapons = new List<Weapon>();
+
+    private void Awake()
+    {
+        instance = this;
+
+        string savedData = PlayerPrefs.GetString("SaveGameInfo", "{}");
+
+        SaveInfoHelper saveInfo = JsonUtility.FromJson<SaveInfoHelper>(savedData);
+
+        if (saveInfo.assignedWeapons.Count == 0)
+        {
+            // If assignedWeapons is empty, add a random weapon from unassignedWeapons
+            if (unassignedWeapons.Count > 0)
+            {
+                AddWeapon(Random.Range(0, unassignedWeapons.Count));
+            }
+        }
+        else
+        {
+            // Otherwise, load weapons from saved data
+            LoadWeaponsFromSaveData(savedData);
+        }
+    }
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        AddWeapon(Random.Range(0, unassignedWeapons.Count));
+        //AddWeapon(Random.Range(0, unassignedWeapons.Count));
     }
     // Update is called once per frame
 
@@ -104,44 +135,29 @@ public class PlayerController : MonoBehaviour
         unassignedWeapons.Remove(weaponToAdd);
     }
 
-   /* [System.Serializable]
-    private class WeaponInfo
+    public void AddWeapon(WeaponInfo weaponData)
     {
-        public string name;
-        public int weaponLevel;
+        Weapon weaponToAdd = FindWeaponPrefabByName(weaponData.name);
+        if (weaponToAdd != null)
+        {
+            // Set the weapon level
+            weaponToAdd.weaponLevel = weaponData.weaponLevel;
+            // Add to the assigned weapons list
+            assignedWeapons.Add(weaponToAdd);
+
+            weaponToAdd.gameObject.SetActive(true);
+            // Update the save info
+            SaveLoadController.instance.saveInfo.assignedWeapons.Add(weaponToAdd.gameObject);
+            // Remove from unassigned list
+            unassignedWeapons.Remove(weaponToAdd);
+        }
+        else
+        {
+            Debug.LogError("Weapon not found for name: " + weaponData.name);
+        }
     }
 
-    [System.Serializable]
-    private class SaveInfoHelper
-    {
-        public string[] enemyToSpawn; // This will hold the names as strings.
-        public List<WeaponInfo> assignedWeapons; // List to hold weapon names and levels.
-
-    }*/
-
-    //public void AddWeapon(WeaponInfo weaponData)
-    //{
-    //    Weapon weaponToAdd = FindWeaponPrefabByName(weaponData.weaponName);
-    //    if (weaponToAdd != null)
-    //    {
-    //        // Set the weapon level
-    //        weaponToAdd.weaponLevel = weaponData.weaponLevel;
-    //        // Add to the assigned weapons list
-    //        assignedWeapons.Add(weaponToAdd);
-
-    //        weaponToAdd.gameObject.SetActive(true);
-    //        // Update the save info
-    //        SaveLoadController.instance.saveInfo.assignedWeapons.Add(weaponToAdd.gameObject);
-    //        // Remove from unassigned list
-    //        unassignedWeapons.Remove(weaponToAdd);
-    //    }
-    //    else
-    //    {
-    //        Debug.LogError("Weapon not found for name: " + weaponData.weaponName);
-    //    }
-    //}
-
-    /*private Weapon FindWeaponPrefabByName(string name)
+    private Weapon FindWeaponPrefabByName(string name)
     {
         foreach (Weapon weapon in unassignedWeapons)
         {
@@ -179,5 +195,5 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError("No saved weapon data to load.");
         }
-    }*/
+    }
 }
