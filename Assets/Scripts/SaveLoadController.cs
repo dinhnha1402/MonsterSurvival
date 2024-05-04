@@ -10,7 +10,7 @@ public class SaveLoadController : MonoBehaviour
     [SerializeField] private MongoDBConnector mongoController;
     [SerializeField] private GameObject[] allEnemyPrefabs;
     [SerializeField] private GameObject[] allWeaponsPrefabs;
-
+    public GameObject SavedUI;
 
     void Awake()
     {
@@ -150,31 +150,45 @@ public class SaveLoadController : MonoBehaviour
 
     public void SaveToDB()
     {
-        SaveSystem saveSystem = new SaveSystem();
-        string username = saveSystem.GetUsername();
-
-        // Tạo một đối tượng SaveInfo mới
-        SaveInfo data = new SaveInfo
+        if (!SavedUI.activeSelf)
         {
-            username = username,
-            currentExp = instance.saveInfo.currentExp,
-            currentLevel = instance.saveInfo.currentLevel,
-            currentWave = instance.saveInfo.currentWave,
-            waveLength = instance.saveInfo.waveLength,
-            minTimeToSpawn = instance.saveInfo.minTimeToSpawn,
-            maxTimeToSpawn = instance.saveInfo.maxTimeToSpawn,
-            enemyToSpawn = instance.saveInfo.enemyToSpawn,
-            assignedWeapons = instance.saveInfo.assignedWeapons,
-            saveDateTime = DateTime.Now.ToString("HH:mm:ss dd-MM-yyyy")
-        };
-        // Serialize to JSON
-        string jsonGameSaveData = JsonUtility.ToJson(data, true);  // Sử dụng `true` để định dạng JSON cho dễ đọc
+            SaveSystem saveSystem = new SaveSystem();
+            string username = saveSystem.GetUsername();
 
-        saveSystem.SaveGame(jsonGameSaveData);
+            // Tạo một đối tượng SaveInfo mới
+            SaveInfo data = new SaveInfo
+            {
+                username = username,
+                currentExp = instance.saveInfo.currentExp,
+                currentLevel = instance.saveInfo.currentLevel,
+                currentWave = instance.saveInfo.currentWave,
+                waveLength = instance.saveInfo.waveLength,
+                minTimeToSpawn = instance.saveInfo.minTimeToSpawn,
+                maxTimeToSpawn = instance.saveInfo.maxTimeToSpawn,
+                enemyToSpawn = instance.saveInfo.enemyToSpawn,
+                assignedWeapons = instance.saveInfo.assignedWeapons,
+                saveDateTime = DateTime.Now.ToString("HH:mm:ss dd-MM-yyyy")
+            };
+            // Serialize to JSON
+            string jsonGameSaveData = JsonUtility.ToJson(data, true);  // Sử dụng `true` để định dạng JSON cho dễ đọc
 
-        // Giả sử mongoController đã được khởi tạo và có thể sử dụng
-        mongoController.SaveGameInfo(data);
+            saveSystem.SaveGame(jsonGameSaveData);
+
+            // Giả sử mongoController đã được khởi tạo và có thể sử dụng
+            mongoController.SaveGameInfo(data);
+
+            SavedUI.SetActive(true);
+        }
     }
+
+    public void HideSavedUI()
+    {
+        if (SavedUI.activeSelf)
+        {
+            SavedUI.SetActive(false);
+        }
+    }
+
 }
 
 
