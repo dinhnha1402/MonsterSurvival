@@ -1004,6 +1004,8 @@ MonoBehaviour:
   - {fileID: 6614193634877911663, guid: dcdc4099662281a49877c0fef7314ca8, type: 3}
   - {fileID: 848712668}
   SavedUI: {fileID: 2039941732}
+  PauseUI: {fileID: 1543155373}
+  BackgroundPauseMenu: {fileID: 1562172672}
   saveInfo:
     username: 
     currentExp: 0
@@ -7259,6 +7261,7 @@ GameObject:
   - component: {fileID: 1543155376}
   - component: {fileID: 1543155375}
   - component: {fileID: 1543155374}
+  - component: {fileID: 1543155377}
   m_Layer: 5
   m_Name: PauseUI
   m_TagString: Untagged
@@ -7324,6 +7327,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1200, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1543155377
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543155373}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1545987202
 GameObject:
   m_ObjectHideFlags: 0
@@ -7470,6 +7485,7 @@ GameObject:
   - component: {fileID: 1562172676}
   - component: {fileID: 1562172675}
   - component: {fileID: 1562172674}
+  - component: {fileID: 1562172677}
   m_Layer: 5
   m_Name: ButtonPause
   m_TagString: Untagged
@@ -7591,6 +7607,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562172672}
   m_CullTransparentMesh: 1
+--- !u!225 &1562172677
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562172672}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1570821916
 GameObject:
   m_ObjectHideFlags: 0
@@ -9620,7 +9648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.8}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 170, y: 76.285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2039941734

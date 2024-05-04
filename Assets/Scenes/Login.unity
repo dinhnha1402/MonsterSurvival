@@ -276,6 +276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee3288993e260e419f44a4569286ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstInput: {fileID: 656250644}
+  summitButton: {fileID: 2103954797}
 --- !u!1 &486304685
 GameObject:
   m_ObjectHideFlags: 0

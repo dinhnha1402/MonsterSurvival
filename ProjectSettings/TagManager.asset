@@ -9,7 +9,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - SaveUI
   - Water
   - UI
   - Terrain
@@ -62,4 +62,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1589638951
+    locked: 0
+  - name: SaveUI
+    uniqueID: 3057424567
     locked: 0

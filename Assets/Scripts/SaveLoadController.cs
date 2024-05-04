@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class SaveLoadController : MonoBehaviour
@@ -11,6 +12,9 @@ public class SaveLoadController : MonoBehaviour
     [SerializeField] private GameObject[] allEnemyPrefabs;
     [SerializeField] private GameObject[] allWeaponsPrefabs;
     public GameObject SavedUI;
+    public GameObject PauseUI;
+    public GameObject BackgroundPauseMenu;
+
 
     void Awake()
     {
@@ -177,6 +181,11 @@ public class SaveLoadController : MonoBehaviour
             // Giả sử mongoController đã được khởi tạo và có thể sử dụng
             mongoController.SaveGameInfo(data);
 
+            CanvasGroup canvasGroupBackgroundPauseMenu = BackgroundPauseMenu.GetComponent<CanvasGroup>();
+            canvasGroupBackgroundPauseMenu.blocksRaycasts = false;
+            CanvasGroup canvasGroupPauseUI = PauseUI.GetComponent<CanvasGroup>();
+            canvasGroupPauseUI.blocksRaycasts = false;
+
             SavedUI.SetActive(true);
         }
     }
@@ -186,6 +195,11 @@ public class SaveLoadController : MonoBehaviour
         if (SavedUI.activeSelf)
         {
             SavedUI.SetActive(false);
+            CanvasGroup canvasGroupBackgroundPauseMenu = BackgroundPauseMenu.GetComponent<CanvasGroup>();
+            canvasGroupBackgroundPauseMenu.blocksRaycasts = true;
+            CanvasGroup canvasGroupPauseUI = PauseUI.GetComponent<CanvasGroup>();
+            canvasGroupPauseUI.blocksRaycasts = true;
+            //PauseUI.SetActive(true);
         }
     }
 
