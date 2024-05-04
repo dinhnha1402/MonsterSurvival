@@ -23,6 +23,7 @@ public class ExperienceLevelController : MonoBehaviour
     private SaveInfo saveInfo;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +81,10 @@ public class ExperienceLevelController : MonoBehaviour
         {
             currentLevel = expLevels.Count - 1;
         }
+
+        PlayerHealthController.Instance.currentHealth = PlayerHealthController.Instance.maxHealth;
+        PlayerHealthController.Instance.healthSlider.maxValue = PlayerHealthController.Instance.maxHealth;
+        PlayerHealthController.Instance.healthSlider.value = PlayerHealthController.Instance.currentHealth;
 
         //save info
         SaveLoadController.instance.saveInfo.currentLevel = currentLevel;

@@ -4993,7 +4993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa19f210d0c4db459ace960a5cfcc33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 5
+  damageAmount: 4
   isKnockback: 1
   isDestroyOnImpact: 0
   isDamageOvertime: 0

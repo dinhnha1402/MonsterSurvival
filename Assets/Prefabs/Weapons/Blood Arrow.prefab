@@ -5048,7 +5048,7 @@ MonoBehaviour:
   damager: {fileID: 3205416442051941673}
   projectile: {fileID: 5235034449769759981}
   shotWeapon: {fileID: 4574789228670891645}
-  shotTime: 1
+  shotTime: 1.45
   weaponRange: 6
   whatIsEnemy:
     serializedVersion: 2
@@ -5199,7 +5199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa19f210d0c4db459ace960a5cfcc33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 4
+  damageAmount: 5
   isKnockback: 0
   isDestroyOnImpact: 1
   isDamageOvertime: 0
