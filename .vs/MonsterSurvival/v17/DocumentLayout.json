@@ -3,24 +3,44 @@
   "WorkspaceRootPath": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|c:\\vu\\reposity\\unityproject\\monstersurvival\\assets\\scripts\\weapons\\zoneweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\zoneweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\weapons\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|c:\\vu\\reposity\\unityproject\\monstersurvival\\assets\\scripts\\weapons\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\controller\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\weapons\\projectileweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\projectileweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\weapons\\zoneweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\zoneweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\weapons\\spinweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\spinweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\upgradebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\controller\\experiencelevelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\experiencelevelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\saveloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\saveloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\weapons\\spinweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\spinweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\controller\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\controller\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\save\\mongodbconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,18 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\save\\savefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\save\\savefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\controller\\experiencelevelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\experiencelevelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\upgradebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\weapons\\damager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,16 +63,16 @@
       "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\damagenumbercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\controller\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\weapons\\damagenumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapons\\damagenumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\assets\\scripts\\exppickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C96F2D56-7936-84C6-76E9-29DE1C18FC3E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\exppickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\vu\\reposity\\unityproject\\monstersurvival\\assets\\scripts\\weapons\\slashweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\weapons\\slashweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,11 +82,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "ProjectileWeapon.cs",
+              "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\ProjectileWeapon.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapons\\ProjectileWeapon.cs",
+              "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\ProjectileWeapon.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapons\\ProjectileWeapon.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T09:27:36.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SlashWeapon.cs",
+              "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\SlashWeapon.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapons\\SlashWeapon.cs",
+              "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\SlashWeapon.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapons\\SlashWeapon.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T08:10:28.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "SaveFunction.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Save\\SaveFunction.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Save\\SaveFunction.cs",
@@ -90,31 +122,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "MongoDBConnector.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Save\\MongoDBConnector.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Save\\MongoDBConnector.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Save\\MongoDBConnector.cs",
               "RelativeToolTip": "Assets\\Scripts\\Save\\MongoDBConnector.cs",
-              "ViewState": "AQIAAAABAAAAAAAAAAAjwBsBAAAAAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAawA4AAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-18T10:10:33.157Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 9,
               "Title": "UIController.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Controller\\UIController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\UIController.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Controller\\UIController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Controller\\UIController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAFAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwCMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T12:31:58.242Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Damager.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\Damager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Weapons\\Damager.cs",
@@ -126,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "EnemyController.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Controller\\EnemyController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\EnemyController.cs",
@@ -138,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "DamageNumberController.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Controller\\DamageNumberController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\DamageNumberController.cs",
@@ -150,106 +182,105 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ZoneWeapon.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\ZoneWeapon.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Weapons\\ZoneWeapon.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\ZoneWeapon.cs",
               "RelativeToolTip": "Assets\\Scripts\\Weapons\\ZoneWeapon.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAowEoAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T02:18:40.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-25T02:18:40.91Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "SpinWeapon.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\SpinWeapon.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Weapons\\SpinWeapon.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\SpinWeapon.cs",
               "RelativeToolTip": "Assets\\Scripts\\Weapons\\SpinWeapon.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwCcAAAAAAAAA",
+              "ViewState": "AQIAACUAAAAAAAAAAAAgwF8AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-16T17:23:19.325Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "ExperienceLevelController.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Controller\\ExperienceLevelController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\ExperienceLevelController.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Controller\\ExperienceLevelController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Controller\\ExperienceLevelController.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAswEcAAAAtAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCkAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T10:23:36.547Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Controller\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\PlayerController.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Controller\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Controller\\PlayerController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGMAAAAAAAAA",
+              "ViewState": "AQIAACgAAAAAAAAAAAAAwDUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T10:39:50.969Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "SaveLoadController.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\SaveLoadController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SaveLoadController.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\SaveLoadController.cs",
               "RelativeToolTip": "Assets\\Scripts\\SaveLoadController.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAlwJMAAAAUAAAA",
+              "ViewState": "AQIAAIIAAAAAAAAAAAAswJIAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T10:46:01.012Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Weapon.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\Weapon.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Weapons\\Weapon.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\Weapon.cs",
               "RelativeToolTip": "Assets\\Scripts\\Weapons\\Weapon.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAAAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAswCYAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-09T04:42:37.557Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "UpgradeButton.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\UpgradeButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradeButton.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\UpgradeButton.cs",
               "RelativeToolTip": "Assets\\Scripts\\UpgradeButton.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAswCoAAAAoAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAAswCoAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-09T10:42:18.184Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "EnemySpawner.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\EnemySpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemySpawner.cs",
               "ToolTip": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\EnemySpawner.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemySpawner.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAIBJwJ8AAAAAAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-16T16:34:59.692Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "DamageNumber.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\Weapons\\DamageNumber.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Weapons\\DamageNumber.cs",
@@ -261,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ExpPickup.cs",
               "DocumentMoniker": "C:\\Vu\\Reposity\\UnityProject\\MonsterSurvival\\Assets\\Scripts\\ExpPickup.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ExpPickup.cs",

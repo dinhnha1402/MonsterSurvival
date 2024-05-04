@@ -131,8 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 1
   isKnockback: 0
-  isDamageOvertime: 1
   isDestroyOnImpact: 0
+  isDamageOvertime: 1
   hitDelayTime: 0.5
 --- !u!212 &2145514584915608996
 SpriteRenderer:

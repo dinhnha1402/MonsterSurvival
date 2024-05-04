@@ -13,7 +13,6 @@ using Assets.Scripts.Save;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using UnityEditor.UI;
 using System.Text.RegularExpressions;
 
 public class MongoDBConnector : MonoBehaviour

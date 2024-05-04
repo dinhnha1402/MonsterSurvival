@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public class ExperienceLevelController : MonoBehaviour
@@ -21,6 +20,9 @@ public class ExperienceLevelController : MonoBehaviour
 
     public List<Weapon> weaponsToUpgrade;
 
+    private SaveInfo saveInfo;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,15 @@ public class ExperienceLevelController : MonoBehaviour
         {
             expLevels.Add(Mathf.CeilToInt(expLevels[expLevels.Count - 1] * 1.1f));
         }
+
+        string savedData = PlayerPrefs.GetString("SaveGameInfo", "{}");
+
+        saveInfo = JsonUtility.FromJson<SaveInfo>(savedData);
+
+        currentLevel = saveInfo.currentLevel;
+
+        UIController.Instance.UpdateExperience(currentExp, expLevels[currentLevel], currentLevel);
+
     }
 
     // Update is called once per frame
@@ -35,6 +46,8 @@ public class ExperienceLevelController : MonoBehaviour
     {
         
     }
+
+
 
     public void GetExp(int expAmountToGet)
     {

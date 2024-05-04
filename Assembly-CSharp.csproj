@@ -91,7 +91,6 @@
     <Compile Include="Assets\Scripts\Controller\UIController.cs" />
     <Compile Include="Assets\Scripts\Weapons\DamageNumber.cs" />
     <Compile Include="Assets\Scripts\Controller\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Weapons\SlashWeapon.cs" />
     <Compile Include="Assets\Scripts\UpgradeButton.cs" />
     <Compile Include="Assets\Sprites\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
     <Compile Include="Assets\Scripts\Controller\DamageNumberController.cs" />
