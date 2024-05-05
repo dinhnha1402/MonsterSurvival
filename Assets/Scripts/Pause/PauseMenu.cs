@@ -23,8 +23,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Continue()
     {
+        if (!UIController.Instance.levelUpPanel.activeSelf)
+        {
+            Time.timeScale = 1;
+        }
         PausePanel.SetActive(false);
-        Time.timeScale = 1;
     }
 
     public void OpenSetting()
