@@ -1444,20 +1444,20 @@ MonoBehaviour:
   waves:
   - enemyToSpawn:
     - {fileID: 1099289098961432789, guid: 18edeccdfe4a4d146be6e96fecfae0a0, type: 3}
-    waveLength: 10
+    waveLength: 20
     minTimeToSpawn: 1
     maxTimeToSpawn: 3
   - enemyToSpawn:
     - {fileID: 1099289098961432789, guid: 18edeccdfe4a4d146be6e96fecfae0a0, type: 3}
     - {fileID: 1099289098961432789, guid: b375bed6fb0d64249b3dfc389d3b1b0e, type: 3}
-    waveLength: 10
+    waveLength: 20
     minTimeToSpawn: 0.8
     maxTimeToSpawn: 2.5
   - enemyToSpawn:
     - {fileID: 1099289098961432789, guid: 18edeccdfe4a4d146be6e96fecfae0a0, type: 3}
     - {fileID: 1099289098961432789, guid: b375bed6fb0d64249b3dfc389d3b1b0e, type: 3}
     - {fileID: 2005531053131157298, guid: 9dfea3f4a7aa91f46abf344c109b9226, type: 3}
-    waveLength: 10
+    waveLength: 20
     minTimeToSpawn: 0.6
     maxTimeToSpawn: 2
 --- !u!4 &261637874
